@@ -53,7 +53,7 @@
                         <h3 class="text-xl font-semibold text-gray-900 group-hover:text-blue-500 transition-colors">
                             <a href="{{ .RelPermalink }}">{{ .Title }}</a>
                         </h3>
-                        <p class="mt-2 text-gray-600">{{ .Summary }}</p>
+                        <p class="mt-2 text-gray-600">{{ .Summary | truncate 120 "..." }}</p>
                     </div>
                     <span class="flex h-6 w-6 items-center justify-center rounded-full bg-gray-100">→</span>
                 </div>
