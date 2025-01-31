@@ -55,11 +55,11 @@ menu:
     #   params:
     #     type: search
 
-    - name: Slack
-      weight: 10
-      url: https://join.slack.com/t/ta049-ingsoftii/shared_invite/zt-2owpvl6tc-P1NHgQKAbci049EohALmTg 
-      params:
-        icon: academic-cap
+    # - name: Slack
+    #   weight: 10
+    #   url: https://join.slack.com/t/ta049-ingsoftii/shared_invite/zt-2owpvl6tc-P1NHgQKAbci049EohALmTg 
+    #   params:
+    #     icon: academic-cap
 
 params:
   navbar:
