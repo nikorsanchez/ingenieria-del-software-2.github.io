@@ -23,7 +23,7 @@ menu:
       weight: 1
 
     - name: "Docentes"
-      pageRef: "/docentes"
+      pageRef: "/team"
       weight: 2
 
     - name: "Regimen"
@@ -35,7 +35,7 @@ menu:
       weight: 4
 
     - name: "TPs"
-      pageRef: "/assigments"
+      pageRef: "/docs"
       weight: 5
 
     - name: "Material"
