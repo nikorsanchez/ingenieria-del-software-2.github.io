@@ -1,17 +1,5 @@
 ---
-title: My Site
-toc: false
+title: "Ingeniería del Software 2"
+description: "Sitio oficial de la materia en la Facultad de Ingeniería - UBA."
 ---
-
-This is the landing page.
-
-## Explore
-
-{{< cards >}}
-  {{< card link="docs" title="Docs" icon="book-open" >}}
-  {{< card link="about" title="About" icon="user" >}}
-{{< /cards >}}
-
-## Documentation
-
-For more information, visit [Hextra](https://imfing.github.io/hextra).
+Bienvenido a la página oficial de **Ingeniería del Software 2**. Aquí encontrarás información sobre docentes, régimen de aprobación, calendario académico, TPs, material de estudio y más.

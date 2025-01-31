@@ -35,7 +35,7 @@ menu:
       weight: 4
 
     - name: "TPs"
-      pageRef: "/tps"
+      pageRef: "/assigments"
       weight: 5
 
     - name: "Material"
@@ -72,5 +72,4 @@ params:
     displayPoweredBy: false
 
   editURL:
-    enable: true
-    base: "https://github.com/imfing/hextra-starter-template/edit/main/content"
+    enable: false
