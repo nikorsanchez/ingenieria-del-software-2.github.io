@@ -35,7 +35,7 @@ menu:
       weight: 4
 
     - name: "TPs"
-      pageRef: "/docs"
+      pageRef: "/tps"
       weight: 5
 
     - name: "Material"
