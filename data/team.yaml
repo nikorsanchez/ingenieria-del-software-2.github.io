@@ -1,6 +1,6 @@
 team:
   - name: Agustín Rojas
-    pic: "/images/professors/rojas.jpeg"
+    pic: "/images/professors/rojas.png"
     mail: "arojas@fi.uba.ar"
     github: "agrojas"
 
@@ -10,7 +10,7 @@ team:
     github: "IgnacioCarol"
 
   - name: Matias Fonseca
-    pic: "/images/professors/fonseca.jpeg"
+    pic: "/images/professors/fonseca.png"
     mail: "mfonseca@fi.uba.ar"
     github: "matfonseca"
 
@@ -35,16 +35,16 @@ team:
     github: "recheconea"
 
   - name: Matías Rotondo 
-    pic: "/images/professors/rotondo.jpeg"
+    pic: "/images/professors/rotondo.png"
     mail: "mrotondo@fi.uba.ar"
     github: "MatiasRotondo"
 
   - name: Dante Reinaudo
-    pic: "/images/professors/dante.jpeg"
+    pic: "/images/professors/dante.png"
     mail: "dreinaudo@fi.uba.ar"
     github: "DanteReinaudo"
 
   - name: Luis Eduardo Cusihuaman
-    pic: "/images/professors/edu.jpeg"
+    pic: "/images/professors/edu.png"
     mail: "lcusihuaman@fi.uba.ar"
     github: "LuisCusihuaman"
