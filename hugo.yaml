@@ -47,7 +47,7 @@ menu:
       weight: 7
 
     - name: "Contacto"
-      pageRef: "/contacto"
+      pageRef: "/contact"
       weight: 8
 
     # - name: "Buscar"
