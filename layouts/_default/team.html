@@ -1,0 +1,62 @@
+{{ define "main" }}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipo - Ingeniería del Software 2</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-[#FAFAFA]">
+    <!-- Hero Section -->
+    <div class="relative mb-8">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+            <div class="text-center">
+                <div class="mb-6 flex justify-center">
+                    <div class="rounded-full bg-black p-3">
+                        <img src="/images/logo.png" alt="Logo" class="w-8 h-8">
+                    </div>
+                </div>
+                <h1 class="text-3xl font-bold text-gray-900 mb-4">Equipo Docente</h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- Team Grid (Smaller) -->
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
+            {{ range .Site.Data.team.team }}
+            <!-- Team Member Card -->
+            <div class="group relative aspect-square">
+                <img 
+                    src="{{ .pic }}" 
+                    alt="{{ .name }}"
+                    class="w-full h-full object-cover rounded-lg"
+                >
+                <!-- Always visible name -->
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3 rounded-b-lg">
+                    <h3 class="text-white font-medium text-sm text-center">{{ .name }}</h3>
+                </div>
+                <!-- Hover Overlay -->
+                <div class="opacity-0 group-hover:opacity-100 absolute inset-0 bg-black/70 transition-opacity duration-200 flex items-center justify-center p-2 rounded-lg">
+                    <div class="flex space-x-3">
+                        <a href="mailto:{{ .mail }}" class="transform hover:scale-110 transition-transform">
+                            <div class="w-9 h-9 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/20 transition-colors">
+                                <i class="fas fa-envelope text-lg"></i>
+                            </div>
+                        </a>
+                        <a href="https://github.com/{{ .github }}" target="_blank" class="transform hover:scale-110 transition-transform">
+                            <div class="w-9 h-9 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/20 transition-colors">
+                                <i class="fab fa-github text-lg"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</body>
+</html>
+{{ end }}

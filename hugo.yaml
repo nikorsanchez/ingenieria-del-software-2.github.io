@@ -1,0 +1,75 @@
+# Hugo configuration file
+title: "Ingeniería del Software 2"
+
+# Import the hextra theme as a module
+module:
+  imports:
+    - path: github.com/imfing/hextra
+
+markup:
+  # Allow raw HTML
+  goldmark:
+    renderer:
+      unsafe: true
+
+  # Enable hextra's syntax highlighting
+  highlight:
+    noClasses: false
+
+menu:
+  main:
+    - name: "Inicio"
+      pageRef: "/"
+      weight: 1
+
+    - name: "Docentes"
+      pageRef: "/team"
+      weight: 2
+
+    - name: "Regimen"
+      pageRef: "/regimen"
+      weight: 3
+
+    - name: "Calendario"
+      pageRef: "/calendars/2024-2C"
+      weight: 4
+
+    - name: "TPs"
+      pageRef: "/tps"
+      weight: 5
+
+    - name: "Material"
+      pageRef: "/material"
+      weight: 6
+
+    - name: "Encuestas"
+      pageRef: "/blog/surveys"
+      weight: 7
+
+    - name: "Contacto"
+      pageRef: "/contact"
+      weight: 8
+
+    # - name: "Buscar"
+    #   weight: 9
+    #   params:
+    #     type: search
+
+    # - name: Slack
+    #   weight: 10
+    #   url: https://join.slack.com/t/ta049-ingsoftii/shared_invite/zt-2owpvl6tc-P1NHgQKAbci049EohALmTg 
+    #   params:
+    #     icon: academic-cap
+
+params:
+  navbar:
+    displayTitle: true
+    displayLogo: false
+
+  footer:
+    # Example settings; adjust as desired
+    displayCopyright: false
+    displayPoweredBy: false
+
+  editURL:
+    enable: false
