@@ -1,0 +1,93 @@
+{{ define "main" }}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Material de Referencia</title>
+  <!-- TailwindCSS CDN (or your own pipeline) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 min-h-screen text-gray-900">
+  <!-- Main Content -->
+  <main class="max-w-3xl mx-auto px-4 py-8 space-y-4">
+    {{ range .Site.Data.material.sections }}
+    <section class="bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+      <!-- Use <details>/<summary> for expand/collapse -->
+      <details class="group">
+        <!-- Summary Header -->
+        <summary class="p-6 cursor-pointer flex items-start gap-4 list-none">
+          <span class="text-3xl flex-shrink-0">{{ .emoji | default "📘" }}</span>
+          <div class="flex-grow">
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+              {{ .title }}
+            </h3>
+            <div class="flex flex-wrap gap-2">
+              {{ range (first 2 .topics) }}
+              <span class="inline-flex items-center px-3 py-1 rounded-full text-sm bg-gray-100 text-gray-700">
+                {{ . }}
+              </span>
+              {{ end }}
+              <!-- If more than 2 topics, show a +N badge -->
+              {{ if gt (len .topics) 2 }}
+              <span class="inline-flex items-center px-3 py-1 rounded-full text-sm bg-gray-100 text-gray-700">
+                +{{ sub (len .topics) 2 }} more
+              </span>
+              {{ end }}
+            </div>
+          </div>
+          <!-- Chevron down icon (pure HTML) -->
+          <div class="ml-4 text-gray-400 group-open:rotate-180 transition-transform">
+            <!-- Simple SVG chevron icon -->
+            <svg class="w-6 h-6" fill="none" stroke="currentColor"
+                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"/>
+            </svg>
+          </div>
+        </summary>
+
+        <!-- Expanded Content -->
+        <div class="px-6 pb-6 pt-2 border-t border-gray-100 space-y-4">
+          <!-- Show full list of topics -->
+          <div>
+            <h4 class="text-sm font-medium text-gray-500 mb-2">Temas:</h4>
+            <div class="flex flex-wrap gap-2">
+              {{ range .topics }}
+              <span class="inline-flex items-center px-3 py-1 rounded-full text-sm bg-gray-100 text-gray-700">
+                {{ . }}
+              </span>
+              {{ end }}
+            </div>
+          </div>
+
+          <!-- Resources / Links -->
+          {{ if .links }}
+          <div>
+            <h4 class="text-sm font-medium text-gray-500 mb-2">Recursos:</h4>
+            <div class="space-y-2">
+              {{ range .links }}
+              <a href="{{ . }}" target="_blank"
+                 class="flex items-center gap-2 text-sm text-blue-600 hover:text-blue-700 transition-colors">
+                <!-- Simple external link icon (SVG) -->
+                <svg class="w-4 h-4" fill="none" stroke="currentColor"
+                     viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M13 7h6m0 0v6m0-6L10 16"/>
+                </svg>
+                {{ . }}
+              </a>
+              {{ end }}
+            </div>
+          </div>
+          {{ end }}
+        </div>
+      </details>
+    </section>
+    {{ end }}
+  </main>
+
+</body>
+</html>
+{{ end }}

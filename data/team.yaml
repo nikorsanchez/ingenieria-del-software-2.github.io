@@ -1,0 +1,50 @@
+team:
+  - name: Agustín Rojas
+    pic: "/images/professors/rojas.png"
+    mail: "arojas@fi.uba.ar"
+    github: "agrojas"
+
+  - name: Ignacio Carol Lugones
+    pic: "/images/professors/nacho.jpeg"
+    mail: "icarol@fi.uba.ar"
+    github: "IgnacioCarol"
+
+  - name: Matias Fonseca
+    pic: "/images/professors/fonseca.png"
+    mail: "mfonseca@fi.uba.ar"
+    github: "matfonseca"
+
+  - name: Nicolás Pablo Fernández Theillet  
+    pic: "/images/professors/nico.jpeg"
+    mail: "nflabo@gmail.com"
+    github: "npfernandeztheillet"
+
+  - name: Paulo Cuneo
+    pic: "/images/professors/paulo.jpeg"
+    mail: "cuneo.paulo.cesar@gmail.com"
+    github: "pcuneo"
+
+  - name: Lucas Lavandeira
+    pic: "/images/professors/lucas.jpeg"
+    mail: "lucaslavandeira@gmail.com"
+    github: "lucaslavandeira"
+
+  - name: Rodrigo Echeconea
+    pic: "/images/professors/rodri.jpeg"
+    mail: "recheconea@fi.uba.ar"
+    github: "recheconea"
+
+  - name: Matías Rotondo 
+    pic: "/images/professors/rotondo.png"
+    mail: "mrotondo@fi.uba.ar"
+    github: "MatiasRotondo"
+
+  - name: Dante Reinaudo
+    pic: "/images/professors/dante.png"
+    mail: "dreinaudo@fi.uba.ar"
+    github: "DanteReinaudo"
+
+  - name: Luis Eduardo Cusihuaman
+    pic: "/images/professors/edu.png"
+    mail: "lcusihuaman@fi.uba.ar"
+    github: "LuisCusihuaman"
