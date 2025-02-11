@@ -31,7 +31,7 @@ menu:
       weight: 3
 
     - name: "Calendario"
-      pageRef: "/calendars/2024-2C"
+      pageRef: "/calendars/2024-2c"
       weight: 4
 
     - name: "TPs"
