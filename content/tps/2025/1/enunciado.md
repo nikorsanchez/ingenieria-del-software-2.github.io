@@ -66,6 +66,9 @@ El trabajo se aprobará al cumplir con una cantidad mínima de puntos obtenidos 
 #### [Asignaciones y Evaluaciones](#asignaciones-y-evaluaciones)
 
 - [Creación de tareas y exámenes](#creación-de-tareas-y-exámenes)
+- [Completar tarea/rendir examen](#completar-tarea-rendir-examen)
+- [Listado de tareas/exámenes (docente)](#listado-de-tareasexámenes-docente)
+- [Listado de tareas/exámenes (alumno)](#listado-de-tareasexámenes-alumno)
 - [Corrección automática con IA](#corrección-automática-con-ia)
 - [Retroalimentación y notas](#retroalimentación-y-notas)
 
@@ -110,7 +113,7 @@ _En el resto de los CA se utilizará la nomenclatura Usuario como un usuario reg
 - CA 3: Falta uno o más campos obligatorios
   - Cuando el registro del usuario es incorrecto debido a un ingreso erróneo o faltante de campos. 
   - Entonces el sistema indicará los campos faltantes y/o erróneos y no permitirá el ingreso al sistema.
-- CA 5: Registro fallido
+- CA 4: Registro fallido
   - Cuando el registro del usuario falla debido a un error del servicio.
   - Entonces el sistema indicará un mensaje de error acorde al usuario.
 
@@ -590,3 +593,182 @@ ___
 - CA 4: Resumen de feedbacks del curso generado por IA  
   - Cuando el docente solicita un resumen de los feedbacks,  
   - Entonces el sistema empleará un modelo de IA para generar un resumen que resalte las tendencias generales, aspectos positivos y áreas de mejora, facilitando una visión rápida y global de la satisfacción y desempeño en el curso.
+
+
+___
+
+
+  #### Creación de tareas y exámenes
+
+**Descripción**
+
+- Como docente, quiero poder crear tareas y exámenes en la plataforma para evaluar el conocimiento de mis estudiantes de forma estructurada y automatizar, en la medida de lo posible, el proceso de corrección y retroalimentación.
+
+**Criterios de aceptación**
+
+- **CA 1: Creación exitosa**  
+  - Cuando el docente completa todos los campos obligatorios (título, descripción, fecha de entrega, instrucciones, etc.) para una tarea o examen,  
+  - Entonces el sistema debe crear y almacenar la actividad correctamente, mostrando un mensaje de confirmación.
+
+- **CA 2: Validación de campos obligatorios**  
+  - Cuando el docente intenta crear una tarea o examen sin completar uno o más campos esenciales,  
+  - Entonces el sistema mostrará mensajes de error específicos indicando qué información falta o es incorrecta, impidiendo la creación hasta que se corrijan.
+
+- **CA 3: Configuración de fecha y condiciones de entrega**  
+  - Cuando el docente establece una fecha y hora de entrega para la tarea o examen,  
+  - Entonces el sistema debe permitir configurar estos parámetros y, de ser necesario, definir condiciones adicionales (como tiempo de tolerancia o reglas de entrega).
+
+- **CA 4: Edición y actualización**  
+  - Cuando el docente decide modificar los detalles de una tarea o examen ya creada,  
+  - Entonces el sistema deberá permitir la edición de los campos correspondientes y actualizar la información de forma inmediata, mostrando una notificación de éxito.
+
+- **CA 5: Eliminación de tareas y exámenes**  
+  - Cuando el docente decide eliminar una tarea o examen,  
+  - Entonces el sistema solicitará una confirmación de la acción y, una vez confirmada, eliminará la actividad de la plataforma.
+
+- **CA 6: Publicación y visibilidad para estudiantes**  
+  - Cuando una tarea o examen se crea y se publica,  
+  - Entonces el sistema deberá mostrarla en la sección de actividades de los estudiantes inscritos en el curso, asegurando que sólo los usuarios autorizados puedan visualizarla.
+
+
+
+___
+
+
+#### Completar tarea/rendir examen
+
+**Descripción**
+
+- Como alumno, quiero poder completar tareas y rendir exámenes asignados para evaluar mi aprendizaje, de modo que pueda ingresar mis respuestas y recibir retroalimentación de forma estructurada.
+
+**Criterios de aceptación**
+
+- **CA 1: Acceso a la tarea/examen**  
+  - Cuando el alumno accede a la sección "Mis Actividades" o "Tareas y Exámenes",  
+  - Entonces el sistema mostrará las actividades asignadas, incluyendo instrucciones, fecha límite y estado (pendiente, en curso, etc.).
+
+- **CA 2: Registro y entrada de respuestas**  
+  - Cuando el alumno interactúa con una tarea o examen,  
+  - Entonces el sistema deberá permitirle ingresar respuestas (texto, selección múltiple, subida de archivos, etc.) según el tipo de actividad.
+
+- **CA 3: Envío y confirmación de entrega**  
+  - Cuando el alumno finaliza la actividad y hace clic en "Enviar",  
+  - Entonces el sistema registrará la entrega con la marca de tiempo correspondiente y mostrará un mensaje de confirmación de envío exitoso.
+
+- **CA 4: Validación del plazo de entrega**  
+  - Cuando el alumno envía la actividad,  
+  - Entonces el sistema verificará que se entregue dentro del plazo establecido; si se envía fuera del plazo, se notificará que la entrega es tardía y se aplicará la política correspondiente.
+
+
+___
+
+
+#### Listado de tareas/exámenes (docente)
+
+**Descripción**
+
+- Como docente, quiero poder ver un listado de todas las tareas y exámenes que he creado para gestionar y monitorear la actividad de mis estudiantes, permitiéndome filtrar y navegar los registros de manera organizada.
+
+**Criterios de aceptación**
+
+- **CA 1: Visualización del listado**  
+  - Cuando el docente accede a la sección "Mis Tareas/Exámenes",  
+  - Entonces el sistema mostrará una lista de todas las actividades creadas, con información resumida como título, fecha de entrega, estado y cantidad de envíos.
+
+- **CA 2: Filtro de actividades**  
+  - Cuando el docente utiliza opciones de filtrado (por curso, fecha, estado, etc.),  
+  - Entonces el sistema mostrará únicamente las actividades que cumplan con los criterios seleccionados.
+
+- **CA 3: Paginación**  
+  - Cuando existen muchas actividades,  
+  - Entonces el sistema presentará el listado paginado para facilitar la navegación.
+
+- **CA 4: Acceso a detalles de la actividad**  
+  - Cuando el docente selecciona una tarea o examen del listado,  
+  - Entonces el sistema mostrará los detalles completos de la actividad, incluyendo las respuestas de los estudiantes y opciones para editar o eliminar la actividad.
+
+
+___
+
+
+
+#### Listado de tareas/exámenes (alumno)
+
+**Descripción**
+
+- Como alumno, quiero poder ver un listado de las tareas y exámenes asignados para gestionar mis actividades académicas, conocer cuáles debo completar y revisar mi historial, de forma filtrable y paginada.
+
+**Criterios de aceptación**
+
+- **CA 1: Visualización del listado**  
+  - Cuando el alumno accede a la sección "Mis Tareas/Exámenes",  
+  - Entonces el sistema mostrará una lista de todas las actividades asignadas, con detalles como título, fecha límite, estado (pendiente, completada, atrasada), etc.
+
+- **CA 2: Filtro de actividades**  
+  - Cuando el alumno utiliza opciones de filtrado (por estado, fecha, curso, etc.),  
+  - Entonces el sistema mostrará únicamente las actividades que cumplan con los criterios seleccionados.
+
+- **CA 3: Paginación**  
+  - Cuando existen numerosos registros,  
+  - Entonces el sistema presentará los resultados paginados para una navegación eficiente.
+
+- **CA 4: Acceso a detalles de la actividad**  
+  - Cuando el alumno selecciona una tarea o examen del listado,  
+  - Entonces el sistema mostrará la información completa de la actividad, incluyendo instrucciones, recursos adjuntos y la opción para iniciar o revisar la actividad.
+
+___
+
+
+#### Corrección automática con IA
+
+**Descripción**
+
+- Como docente, quiero que el sistema corrija automáticamente las respuestas de tareas y exámenes utilizando inteligencia artificial, para agilizar el proceso evaluativo y proporcionar calificaciones objetivas y consistentes sin intervención manual para respuestas de formato compatible.
+
+**Criterios de aceptación**
+
+- **CA 1: Procesamiento de respuestas**  
+  - Cuando el alumno envía una tarea o examen con respuestas en formatos compatibles (por ejemplo, selección múltiple o verdadero/falso),  
+  - Entonces el sistema enviará las respuestas al motor de IA para su evaluación.
+
+- **CA 2: Asignación de calificaciones automáticas**  
+  - Cuando la IA procesa las respuestas,  
+  - Entonces el sistema asignará una nota numérica basada en criterios de evaluación predefinidos y mostrará el resultado tanto al docente como al alumno.
+
+- **CA 3: Manejo de respuestas ambiguas o no evaluables**  
+  - Cuando la IA detecte respuestas que no puedan evaluarse automáticamente (por ejemplo, respuestas abiertas o ambiguas),  
+  - Entonces el sistema marcará dichas respuestas para revisión manual por parte del docente.
+
+- **CA 4: Notificación de resultados**  
+  - Cuando se complete el proceso de corrección automática,  
+  - Entonces el sistema enviará una notificación informando a los usuarios que la evaluación ha finalizado y los resultados están disponibles.
+
+---
+
+#### Retroalimentación y notas
+
+**Descripción**
+
+- Como docente, quiero poder proporcionar retroalimentación detallada y asignar notas a las tareas y exámenes, ya sea de forma manual o complementada por la IA, para orientar a los alumnos sobre su desempeño y áreas de mejora.
+
+**Criterios de aceptación**
+
+- **CA 1: Envío de retroalimentación escrita**  
+  - Cuando el docente agrega comentarios a una tarea o examen evaluado,  
+  - Entonces el sistema deberá permitir la entrada de texto de retroalimentación junto con la calificación asignada.
+
+- **CA 2: Visualización de retroalimentación y notas**  
+  - Cuando el alumno revisa una actividad evaluada,  
+  - Entonces el sistema mostrará la nota asignada y la retroalimentación detallada proporcionada por el docente.
+
+- **CA 3: Edición de retroalimentación**  
+  - Cuando el docente necesita modificar la retroalimentación antes de finalizar la evaluación,  
+  - Entonces el sistema deberá permitir la edición de los comentarios y la actualización de la nota correspondiente.
+
+- **CA 4: Generación de resumen de retroalimentación por IA**  
+  - Cuando el docente opta por complementar su retroalimentación,  
+  - Entonces el sistema podrá utilizar un modelo de IA para generar un resumen conciso que destaque los puntos clave de la evaluación.
+
+- **CA 5: Seguridad y confidencialidad**  
+  - Cuando se almacena la retroalimentación y las notas,  
+  - Entonces el sistema asegurará que dicha información sea accesible únicamente para el docente y el alumno involucrado, cumpliendo con las normativas de privacidad.
