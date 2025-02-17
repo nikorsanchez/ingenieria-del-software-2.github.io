@@ -743,7 +743,7 @@ ___
   - Cuando se complete el proceso de corrección automática,  
   - Entonces el sistema enviará una notificación informando a los usuarios que la evaluación ha finalizado y los resultados están disponibles.
 
----
+___
 
 #### Retroalimentación y notas
 
@@ -772,3 +772,106 @@ ___
 - **CA 5: Seguridad y confidencialidad**  
   - Cuando se almacena la retroalimentación y las notas,  
   - Entonces el sistema asegurará que dicha información sea accesible únicamente para el docente y el alumno involucrado, cumpliendo con las normativas de privacidad.
+
+
+___
+
+
+#### Foro de preguntas y respuestas
+
+**Descripción**
+
+- Como usuario, quiero poder acceder a un foro de preguntas y respuestas dentro de la plataforma para interactuar con docentes y compañeros, resolver dudas y compartir conocimientos de manera colaborativa.
+
+**Criterios de aceptación**
+
+- **CA 1: Creación de preguntas**  
+  - Cuando un usuario desea publicar una pregunta en el foro,  
+  - Entonces el sistema deberá permitir la creación de una pregunta que incluya un título, una descripción detallada y la asignación de etiquetas o categorías relevantes.
+
+- **CA 2: Publicación de respuestas**  
+  - Cuando un usuario responde a una pregunta,  
+  - Entonces el sistema deberá permitir la publicación de respuestas en formato de texto (y opcionalmente con recursos multimedia) que se adjunten a la pregunta original.
+
+- **CA 3: Edición y eliminación de publicaciones**  
+  - Cuando el autor de una pregunta o respuesta desea modificar o eliminar su publicación,  
+  - Entonces el sistema deberá permitir la edición o eliminación de dicha publicación, siempre y cuando se cumplan las políticas de tiempo y moderación definidas.
+
+- **CA 4: Votación y aceptación de respuestas**  
+  - Cuando un usuario considera útil una pregunta o respuesta,  
+  - Entonces el sistema deberá permitir que se emitan votos (positivos o negativos) y que el autor de la pregunta marque una respuesta como aceptada para resaltar la solución más adecuada.
+
+- **CA 5: Filtrado y búsqueda de contenido**  
+  - Cuando un usuario utiliza la funcionalidad de búsqueda o aplica filtros (por etiquetas, fecha, popularidad, etc.),  
+  - Entonces el sistema deberá mostrar únicamente las preguntas y respuestas que cumplan con los criterios de búsqueda o filtro seleccionados.
+
+- **CA 6: Notificaciones de actividad**  
+  - Cuando se produzca actividad relevante en una pregunta (nuevas respuestas, comentarios o votos),  
+  - Entonces el sistema deberá enviar notificaciones a los usuarios involucrados (autor de la pregunta, usuarios que han respondido o comentado).
+
+- **CA 7: Paginación**  
+  - Cuando existan numerosas preguntas en el foro,  
+  - Entonces el sistema presentará los resultados paginados para facilitar la navegación y la carga eficiente de contenidos.
+
+___
+
+
+#### Chat de asistencia
+
+**Descripción**
+
+- Como usuario, quiero disponer de un chat de asistencia completamente gestionado por inteligencia artificial para resolver mis dudas en tiempo real, obtener información precisa y recibir recomendaciones automatizadas sin intervención humana, asegurando respuestas consistentes y rápidas.
+
+**Criterios de aceptación**
+
+- **CA 1: Acceso al chat IA**  
+  - Cuando el usuario accede a la sección "Chat de Asistencia IA",  
+  - Entonces el sistema mostrará una interfaz de chat interactiva exclusivamente gestionada por un bot de IA.
+
+- **CA 2: Procesamiento de lenguaje natural**  
+  - Cuando el usuario envía una consulta en lenguaje natural,  
+  - Entonces el bot de IA interpretará la pregunta utilizando técnicas avanzadas de procesamiento de lenguaje natural para comprender la intención y el contexto.
+
+- **CA 3: Respuestas inteligentes y contextualizadas**  
+  - Cuando el usuario realiza una consulta,  
+  - Entonces el bot de IA deberá proporcionar respuestas precisas, relevantes y adaptadas al contexto de la plataforma, incluyendo sugerencias y recursos adicionales cuando sea pertinente.
+
+- **CA 4: Aprendizaje continuo**  
+  - Cuando el bot de IA se enfrente a consultas desconocidas o ambiguas,  
+  - Entonces registrará la interacción para análisis y mejora, permitiendo un proceso de aprendizaje continuo que optimice la calidad de sus respuestas futuras.
+
+- **CA 5: Evaluación y feedback de las respuestas**  
+  - Cuando el bot de IA responde a una consulta,  
+  - Entonces el sistema ofrecerá al usuario la opción de calificar la respuesta y dejar comentarios, permitiendo así retroalimentación para ajustar y mejorar el desempeño del bot.
+
+
+___
+
+
+#### Notificaciones push y email
+
+**Descripción**
+
+- Como usuario, quiero recibir notificaciones push y correos electrónicos para estar informado de eventos importantes (por ejemplo, nuevas asignaciones, mensajes, recordatorios y actualizaciones) de manera oportuna, de modo que no me pierda información relevante y pueda actuar en consecuencia.
+
+**Criterios de aceptación**
+
+- **CA 1: Envío de notificaciones push**  
+  - Cuando ocurre un evento relevante (como asignación de una nueva tarea, recepción de un mensaje o recordatorio de fecha límite),  
+  - Entonces el sistema enviará una notificación push en tiempo real al dispositivo del usuario.
+
+- **CA 2: Envío de notificaciones por correo electrónico**  
+  - Cuando ocurre un evento relevante,  
+  - Entonces el sistema enviará un correo electrónico con los detalles correspondientes a la dirección de correo registrada del usuario.
+
+- **CA 3: Configuración de notificaciones**  
+  - Cuando el usuario accede a la configuración de notificaciones,  
+  - Entonces el sistema permitirá personalizar sus preferencias, pudiendo activar o desactivar notificaciones push y/o por email para distintos tipos de eventos.
+
+- **CA 4: Seguridad y privacidad en el envío**  
+  - Cuando se envían notificaciones,  
+  - Entonces el sistema garantizará que la transmisión se realice de forma segura y que se respeten la integridad y privacidad de los datos del usuario.
+
+- **CA 5: Registro y confirmación de envíos**  
+  - Cuando se envía una notificación,  
+  - Entonces el sistema registrará el evento de envío y, opcionalmente, mostrará una confirmación en la sección de configuración o mediante un log de actividad.
