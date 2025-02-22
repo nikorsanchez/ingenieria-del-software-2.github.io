@@ -19,7 +19,23 @@ subtitle: "Grupal"
       5. [Métricas y Análisis](#métricas-y-análisis)
       6. [Administración de la Plataforma](#administración-de-la-plataforma)
    2. [Historias de Usuario](#historias-de-usuario)
-4. [Historias requeridas y optativas](#historias-requeridas-y-optativas)
+4. [Requisitos No Funcionales](#requisitos-no-funcionales)
+    1. [Componentes](#componentes)
+    2. [Tecnologías](#tecnologias)
+    3. [Log](#log)
+    4. [Monitoreo](#monitoreo)
+    5. [Empaquetamiento](#empaquetamiento)
+    6. [Testing](#testing)
+    7. [CI-CD](#ci-cd) 
+    8. [Despliegue en la Nube](#despliegue-en-la-nube)
+    9. [Despliegue usando k8s](#despliegue-usando-k8s)
+    10. [UX](#ux)
+    11. [Documentación](#documentación)
+5. [Instancias de entrega](#instancias-de-entrega)
+6. [Historias requeridas y optativas](#historias-requeridas-y-optativas)
+    1. [Requeridas](#requeridas)
+    2. [Optativas](#optativas)
+7. [Material de referencia](#material-de-referencia)
 
 ## Descripción
 
@@ -875,3 +891,425 @@ ___
 - **CA 5: Registro y confirmación de envíos**  
   - Cuando se envía una notificación,  
   - Entonces el sistema registrará el evento de envío y, opcionalmente, mostrará una confirmación en la sección de configuración o mediante un log de actividad.
+
+
+
+___
+
+
+
+#### Estadísticas de desempeño estudiantil
+
+**Descripción**
+
+- Como docente, quiero poder ver estadísticas de desempeño de mis estudiantes en los cursos para monitorear su progreso, identificar áreas de mejora y ajustar mis estrategias de enseñanza de forma oportuna.
+
+**Criterios de aceptación**
+
+- **CA 1: Visualización de estadísticas globales**  
+  - Cuando el docente accede a la sección "Estadísticas de desempeño estudiantil",  
+  - Entonces el sistema mostrará indicadores globales como el promedio de calificaciones, la tasa de finalización de tareas y exámenes, y tendencias generales de desempeño.
+
+- **CA 2: Filtrado por curso y periodo**  
+  - Cuando el docente selecciona un curso y define un intervalo de tiempo específico,  
+  - Entonces el sistema actualizará y mostrará las estadísticas detalladas correspondientes a ese curso y periodo.
+
+- **CA 3: Desglose individual por estudiante**  
+  - Cuando el docente selecciona un estudiante en particular dentro del curso,  
+  - Entonces el sistema mostrará un desglose detallado del desempeño individual, incluyendo calificaciones, participación y progreso a lo largo del curso.
+
+- **CA 4: Representación gráfica de datos**  
+  - Cuando se visualizan las estadísticas,  
+  - Entonces el sistema deberá representar la información mediante gráficos (por ejemplo, de barras o líneas) que faciliten la interpretación visual de los datos.
+
+- **CA 5: Actualización en tiempo real**  
+  - Cuando se registren nuevas evaluaciones, tareas o exámenes,  
+  - Entonces el sistema actualizará automáticamente las estadísticas para reflejar el desempeño más reciente.
+
+- **CA 6: Exportación de informes**  
+  - Cuando el docente desee guardar o compartir las estadísticas,  
+  - Entonces el sistema deberá permitir la exportación de los datos en formatos comunes (por ejemplo, PDF o Excel) para su análisis posterior.
+
+
+___
+
+
+#### Análisis de tendencias de aprendizaje
+
+**Descripción**
+
+- Como docente, quiero poder acceder a un análisis de tendencias de aprendizaje basado en los datos históricos de desempeño y participación de los estudiantes, para identificar patrones, detectar desviaciones y ajustar mis estrategias pedagógicas de forma proactiva.
+
+**Criterios de aceptación**
+
+- **CA 1: Agregación de datos históricos**  
+  - Cuando el docente consulta la sección de análisis de tendencias,  
+  - Entonces el sistema debe compilar datos históricos de desempeño, participación y evaluaciones de los estudiantes a lo largo de diferentes periodos.
+
+- **CA 2: Visualización de tendencias a lo largo del tiempo**  
+  - Cuando el docente selecciona un intervalo de tiempo específico,  
+  - Entonces el sistema deberá generar gráficos y reportes que muestren la evolución de indicadores clave (calificaciones, participación, finalización de tareas, etc.) en ese periodo.
+
+- **CA 3: Identificación de patrones y desviaciones**  
+  - Cuando se realiza el análisis,  
+  - Entonces el sistema debe resaltar patrones recurrentes y detectar desviaciones significativas en los indicadores de aprendizaje, facilitando la identificación temprana de áreas de mejora o éxito.
+
+- **CA 4: Filtros y segmentación**  
+  - Cuando el docente utiliza filtros (por curso, grupo de estudiantes, nivel, etc.),  
+  - Entonces el sistema actualizará el análisis para mostrar tendencias específicas según los criterios seleccionados.
+
+- **CA 5: Recomendaciones automatizadas**  
+  - Cuando se detectan tendencias significativas (por ejemplo, disminución en las calificaciones o baja participación),  
+  - Entonces el sistema, mediante un motor de IA, deberá generar recomendaciones automatizadas o sugerencias de intervenciones pedagógicas para abordar dichas tendencias.
+
+___
+
+
+#### Detección de plagio con IA
+
+**Descripción**
+
+- Como docente, quiero que el sistema utilice inteligencia artificial para detectar plagio en los trabajos y exámenes presentados, de modo que se asegure la originalidad de los contenidos y se mantengan los estándares académicos.
+
+**Criterios de aceptación**
+
+- **CA 1: Integración del motor de detección**  
+  - Cuando se suba o entregue un trabajo o examen,  
+  - Entonces el sistema enviará el contenido a un motor de IA especializado en detectar similitudes y plagio comparándolo con una base de datos de fuentes conocidas.
+
+- **CA 2: Generación de informe detallado**  
+  - Cuando se complete el análisis de plagio,  
+  - Entonces el sistema generará un informe que incluya el porcentaje de similitud, las fuentes comparadas y los fragmentos coincidentes, permitiendo al docente evaluar la originalidad del contenido.
+
+- **CA 3: Umbral de detección y notificación**  
+  - Cuando el porcentaje de similitud supere un umbral predefinido,  
+  - Entonces el sistema notificará al docente y marcará el trabajo para revisión, indicando la posible presencia de plagio.
+
+- **CA 4: Gestión de falsos positivos**  
+  - Cuando el sistema detecte similitudes que puedan ser falsos positivos,  
+  - Entonces se deberá permitir al docente revisar el informe en detalle y confirmar o descartar la detección de plagio.
+
+- **CA 5: Registro y seguimiento**  
+  - Cuando se realice la detección de plagio,  
+  - Entonces el sistema deberá almacenar un registro del análisis y sus resultados para futuras auditorías y referencia.
+
+
+___
+
+
+#### Gestión de usuarios y permisos
+
+**Descripción**
+
+- Como administrador, quiero poder gestionar los usuarios de la plataforma y asignar permisos adecuados para controlar el acceso a las funcionalidades y datos, de modo que se garantice la seguridad y se mantenga una administración eficiente del sistema.
+
+**Criterios de aceptación**
+
+- **CA 1: Visualización del listado de usuarios**  
+  - Cuando el administrador accede a la sección de gestión de usuarios,  
+  - Entonces el sistema mostrará una lista completa de los usuarios registrados, incluyendo información relevante como nombre, rol, estado (activo/bloqueado) y fecha de registro.
+
+- **CA 2: Edición de roles y permisos**  
+  - Cuando el administrador selecciona un usuario para modificar sus permisos o rol,  
+  - Entonces el sistema deberá permitir actualizar estos datos y reflejar los cambios de acceso de forma inmediata, mostrando una confirmación de la actualización.
+
+- **CA 3: Bloqueo y desbloqueo de usuarios**  
+  - Cuando el administrador decide bloquear o desbloquear un usuario,  
+  - Entonces el sistema cambiará el estado del usuario en consecuencia, impidiendo el acceso en caso de bloqueo y notificando la acción realizada.
+
+- **CA 4: Registro de auditoría**  
+  - Cuando se realice cualquier modificación en los roles o permisos de los usuarios,  
+  - Entonces el sistema deberá registrar un log con la información de la acción, incluyendo el usuario afectado, el cambio realizado y la fecha/hora de la modificación.
+
+- **CA 5: Validación de acciones**  
+  - Cuando el administrador intente realizar una acción de modificación de permisos o roles,  
+  - Entonces el sistema validará la operación para evitar conflictos o errores, mostrando mensajes de error claros en caso de datos inválidos o acciones no permitidas.
+
+
+___
+
+#### Configuración de reglas y normativas
+
+**Descripción**
+
+- Como administrador, quiero poder configurar y actualizar las reglas y normativas que rigen el uso de la plataforma para definir políticas de uso, restricciones y lineamientos de comportamiento. Esto garantizará un entorno seguro y el cumplimiento de los estándares institucionales y legales.
+
+**Criterios de aceptación**
+
+- **CA 1: Creación y actualización de reglas**  
+  - Cuando el administrador accede a la sección de configuración de reglas,  
+  - Entonces el sistema deberá permitir la creación de nuevas reglas y la actualización de las existentes, incluyendo campos como título, descripción, fecha de vigencia y condiciones de aplicación.
+
+- **CA 2: Validación y consistencia**  
+  - Cuando se ingresan nuevas reglas o se actualizan las existentes,  
+  - Entonces el sistema validará que los datos sean correctos y consistentes, mostrando mensajes de error en caso de información incompleta o inconsistente.
+
+- **CA 3: Publicación y notificación**  
+  - Cuando el administrador finaliza la configuración de las reglas,  
+  - Entonces el sistema publicará las normativas actualizadas y notificará a los usuarios relevantes mediante notificaciones push y/o correo electrónico.
+
+- **CA 4: Registro de auditoría de cambios**  
+  - Cuando se realicen modificaciones en las reglas y normativas,  
+  - Entonces el sistema deberá registrar un log de auditoría que incluya el usuario que realizó el cambio, la naturaleza de la modificación y la fecha/hora de la acción.
+
+- **CA 5: Acceso restringido y seguridad**  
+  - Cuando el administrador accede a la sección de configuración,  
+  - Entonces el sistema garantizará que solo los usuarios autorizados puedan realizar cambios, protegiendo la integridad y confidencialidad de la información.
+
+___
+
+
+#### Monitoreo de actividad y rendimiento
+
+**Descripción**
+
+- Como administrador, quiero poder monitorear la actividad y el rendimiento de la plataforma en tiempo real para detectar problemas, optimizar el uso de recursos y asegurar que todos los servicios funcionen de manera óptima.
+
+**Criterios de aceptación**
+
+- **CA 1: Visualización de indicadores clave**  
+  - Cuando el administrador accede a la sección de monitoreo,  
+  - Entonces el sistema mostrará indicadores clave (por ejemplo, uso de CPU, memoria, número de usuarios activos, tiempo de respuesta, etc.) en dashboards actualizados en tiempo real.
+
+- **CA 2: Registro y acceso a logs**  
+  - Cuando se produce cualquier evento relevante en la plataforma (errores, advertencias, acciones críticas),  
+  - Entonces el sistema registrará automáticamente estos eventos y permitirá al administrador acceder a logs detallados para su análisis.
+
+- **CA 3: Configuración de alertas y notificaciones**  
+  - Cuando se detecten anomalías o se alcancen umbrales predefinidos (por ejemplo, alta latencia o caída de servicio),  
+  - Entonces el sistema enviará alertas inmediatas al administrador mediante notificaciones push o correo electrónico.
+
+- **CA 4: Reportes históricos y exportación**  
+  - Cuando el administrador requiera analizar el rendimiento a lo largo del tiempo,  
+  - Entonces el sistema deberá generar reportes históricos y permitir la exportación de estos datos en formatos comunes (por ejemplo, PDF o Excel).
+
+- **CA 5: Escalabilidad y análisis predictivo (opcional)**  
+  - Cuando se monitoree el rendimiento de la plataforma,  
+  - Entonces el sistema podrá utilizar herramientas de análisis predictivo para identificar tendencias y sugerir acciones preventivas para mejorar la escalabilidad y el rendimiento general.
+
+
+## Requisitos No Funcionales
+
+### Componentes
+
+La plataforma constará de los siguientes componentes:
+
+### Aplicación mobile
+
+Una aplicación mobile, el cual será utilizado por los usuarios.
+_Las tecnologías a utilizar son detalladas en la sección [tecnologías](#tecnologias)_
+
+### Backoffice web
+
+Un backoffice web, el cual será utilizado por los administradores. 
+
+_Las tecnologías a utilizar son detalladas en la sección [tecnologías](#tecnologias)_
+
+### Servicios backend
+
+Distintos servicios de backend para brindar soporte a la plataforma. Como enfoque se recomienda orientar estos servicios hacia una arquitectura de [microservices](https://martinfowler.com/articles/microservices.html). Dicha arquitectura propuesta deberá ser convalidada junto al ayudante. 
+_Las tecnologías a utilizar son detalladas en la sección [tecnologías](#tecnologias)_
+
+___
+
+### Tecnologias
+
+Stack de tecnologías recomendadas para el desarrollo de los distintos componentes.
+
+#### Aplicación mobile
+
+Para el desarrollo de la App se podrá optar por:
+- Desarrollar sobre [React Native](https://reactnative.dev/) utilizando [JavaScript](https://developer.mozilla.org/es/docs/Web/JavaScript) como lenguaje de programación. 
+- Desarrollar sobre [Android](https://developer.android.com/) nativo utilizando [Kotlin](https://kotlinlang.org/) como lenguaje de programación.
+
+___
+
+#### Servicios backend
+
+Para el desarrollo de los servicios backend se deberá utilizar como lenguajes de programación:
+- [Python](https://www.python.org/)
+- [JavaScript](https://developer.mozilla.org/es/docs/Web/JavaScript)
+- [Go](https://go.dev/)
+
+Junto con sus respectivos frameworks. La cátedra recomienda alguno de estos
+- Python:
+  - [FastAPI](https://fastapi.tiangolo.com/)
+  - [Flask](https://flask.palletsprojects.com/en/1.1.x/)
+  - [Django](https://www.djangoproject.com/)
+  - [Tornado](https://www.tornadoweb.org/en/stable/)
+  
+- JavaScript:
+  - [NodeJs](https://nodejs.org/es/)
+  - [Express](https://expressjs.com/)
+  - [Fastify](https://www.fastify.io/)
+  - [Nest.js](https://nestjs.com/)
+
+ - GO:
+   - [Gin](https://github.com/gin-gonic/gin)
+
+Se recomiendan como base de datos alguna de las siguientes 
+- [PostgreSQL](https://www.postgresql.org/)
+- [MongoDB](https://www.mongodb.com/es)
+
+Esta elección será responsabilidad del grupo y la misma deberá estar consensuada junto al ayudante. Además quedará justificada en la documentación técnica que formará parte del TP.
+
+___
+
+#### Backoffice web
+Para el desarrollo del backoffice web se podrán utilizar las siguientes herramientas
+  - [React](https://reactjs.org/)
+  - [Vue.js](https://vuejs.org/)
+  - [Next.js](https://nextjs.org/)
+
+___
+
+#### Contenido multimedia
+Para el uso de contenido multimedia se recomienda utilizar el servicio provisto por firebase [Storage](https://firebase.google.com/docs/storage?hl=es)
+
+___
+
+#### Chat
+Para el uso del chat en tiempo real se recomienda utilizar el servicio provisto por firebase [Real time database](https://firebase.google.com/docs/database?hl=es)
+
+___
+
+#### Notificaciones 
+
+##### Push
+Para el uso de notificaciones push se recomienda utilizar el servicio provisto por firebase [Cloud Messaging](https://firebase.google.com/docs/cloud-messaging?hl=es)
+
+
+##### Mensajeria whatsapp/SMS
+Para el uso de mensajería con SMS se recomienda utilizar el servicio provisto por [Twilio](https://www.twilio.com/docs/sms)
+
+___
+
+### Log
+
+Los servidores deben contar con un sistema de log en donde se registren los eventos que se generen durante la ejecución. El sistema de log debe permitir configurar el nivel de los eventos que desean registrar. Estos niveles son:
+
+| Nivel | Condiciones |
+| ----- | ----------- |
+| Error | Condición de falla catastrófica, el sistema no puede funcionar. (criterio de las 2 a.m.) Condición que haga que la aplicación no pueda ejecutar una funcionalidad. Ejemplo: No es posible conectarse con la base de datos |
+| Warn | Cualquier condición anómala que afecte el funcionamiento del sistema, pero no impida la funcionalidad básica Ejemplos: Uso de APIs deprecadas, Mal uso de APIs |
+| Info | Cualquier acción correspondiente a un caso de uso iniciada por el usuario o el sistema. Información que permita trazar el historial de las entidades. Ejemplos: Conexión a la base de datos exitosa, Conexión de nuevo cliente |
+| Debug | Información de contexto que permita resolver un problema técnico. Debe ser útil incluso sin el código fuente Ejemplo:  Datos de login para la DB |
+
+
+Estos logs deberán ser almacenados de tal manera que puedan ser accedidos en cualquier momento
+
+
+___
+
+### Monitoreo
+
+Para el monitoreo de los servicios se recomiendan alguna de las siguientes librerías/plataformas
+
+- [Datadog](https://www.datadoghq.com/blog/datadog-github-student-developer-pack/)
+- [New Relic](https://blog.newrelic.com/product-news/simple-pricing/)
+- [Prometheus](https://prometheus.io/)
+- [Grafana](https://grafana.com/)
+
+___
+
+### Empaquetamiento
+
+Cada uno de los desarrollos solicitados debe empaquetarse según el estándar de la plataforma, es decir:
+
+* _Python_: Python Setuptools (`setup.py` y `requeriments.txt`)
+* _Node_: Node Package Manager (`npm`, `package.json`), Yarn Package Manager(https://yarnpkg.com/lang/en/)
+
+
+Además, los proyectos backend deberán traer un `Dockerfile` que permita correrlos sin necesidad de tener instalado los respectivos lenguajes.
+
+___
+
+### Testing
+
+El desarrollo de la aplicación se deberá adaptar a los estándares de calidad utilizados por AppMaker©. Dentro de estos estándares se encuentran:
+
+* Pruebas unitarias
+* Métricas: code coverage debe ser mayor a 75%
+* Respetar estándar para estilo de codificación: Lint
+* Pruebas de integración.
+* Todas aquellas que se consideren convenientes para garantizar la calidad de las aplicaciones desarrolladas.
+ 
+**Nota:** Esta sección hace sólo referencia a los servicios de backend No se toma como requerimiento el realizar pruebas sobre el cliente Android, aunque es recomendado como una buena práctica.
+
+___
+
+### CI-CD
+
+Las pruebas y métricas anteriormente mencionadas deberán correr bajo una plataforma de integración continua. 
+
+Se sugiere el uso de [GitHub Actions](https://github.com/features/actions) o [Gitlab Pipelines](https://docs.gitlab.com/ee/ci/pipelines/), pero se podrá utilizar otro previa justificación.
+
+El resultado del _code coverage_ debe ser desplegado automáticamente a una plataforma que permita visualizarlas, entre muchas posibilidades se encuentran:
+
+* [Coveralls](https://coveralls.io/)
+* [Codecov](https://codecov.io/)
+* Utilizar [Github Pages](https://pages.github.com/) para generar una web para visualizarlo
+
+Finalmente, el despliegue al servidor de _PAAS_ elegido deberá ser automático. Este deberá tener en cuenta como la actualización de la base de datos (cambios en las tablas, etc). El mecanismo utilizado para disparar dicho despliegue (utilizar el branch _master_ como productivo, utilizar un tags con nombre especial) será definido por los desarrolladores y deberá ser detallado en la documentación
+
+___
+
+### Despliegue en la Nube
+
+Los servicios, se deberán disponibilizar en la nube utilizando una plataforma como servicio (_[PAAS](https://en.wikipedia.org/wiki/Platform_as_a_service)_).
+La catedra recomienda leer la (sección)[https://ingenieria-del-software-2.github.io/assignments/recommendations/] del sitio de la materia para informarse las distintas opciones disponibles
+ 
+
+___
+
+### Despliegue usando k8s
+
+De manera optativa se podrá realizar una migración de los servicios backend de la plataforma a kubernetes
+
+___
+
+### UX
+
+Se deberá presentar evidencia de prototipado del diseño de pantallas, las cuales serán convalidadas junto al ayudante a cargo
+
+Para el diseño de la interfaz se valorara el uso de las guías de diseño propuestas por Google con _[Material Design](https://material.io/design/)_.
+
+
+___
+
+### Documentación
+
+
+Se deberá entregar la siguiente documentación:
+
+- Servicios Backend:
+  - Documentación técnica: 
+   - Instalación y configuración
+   - Definición de arquitectura
+   - Especificación de API REST: [OpenAPI](https://github.com/OAI/OpenAPI-Specification)
+
+- Guia de usuario de la aplicación disponible en [Github Pages](https://pages.github.com/)
+- Guia de usuario del backoffice disponible en [Github Pages](https://pages.github.com/)
+- Bitácora de proyecto
+- [Análisis postmortem](https://en.wikipedia.org/wiki/Postmortem_documentation)
+
+_Se espera que dicha documentación se elabore de manera incremental y que cada entrega parcial tenga parte de la misma._
+
+___
+
+## Instancias de entrega
+
+| Instancia   |      Fecha      |  Alcance |
+|----------|:-------------:|------:|
+| Checkpoint 0 |  A definir | A definir |
+| Checkpoint 1 |  A definir | A definir |
+| Checkpoint 2 |  A definir | A definir |
+| Checkpoint 3 |  A definir  | A definir |
+| Entrega Final | A definir | A definir |
+    
+___
+
+## Historias obligatorias y optativas
+
+
+Las historias obligatorias y optativas se encuentran definidas [TODO](TODO)
