@@ -9,4 +9,4 @@ title: SnapMsg
 ---
 Ya se encuentra disponible el enunciado del trabajo práctico
 
-[Enunciado](https://ingenieria-del-software-2.github.io/tasks/statement/2023/2/enunciado/)
+[Enunciado](https://ingenieria-del-software-2.github.io/tps/historico/2023/2/enunciado/)
