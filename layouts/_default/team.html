@@ -42,20 +42,20 @@
                 <img 
                     src="{{ .pic }}" 
                     alt="{{ .name }}"
-                    class="w-full h-full object-cover object-center transition-transform duration-450 group-hover:scale-105"
+                    class="w-full h-full object-cover object-center transition-transform duration-480 group-hover:scale-105"
                 >
                 
                 <!-- Overlay Content -->
                 <div class="absolute inset-0 bg-gradient-to-t from-gray-900/40 via-gray-900/20 to-transparent group-hover:from-dark-950/80 group-hover:via-gray-950/60 group-hover:to-gray-950/30 flex flex-col justify-end p-5 transition-colors">
                     <!-- Social Icons -->
-                    <div class="flex justify-center space-x-3 mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-450">
+                    <div class="flex justify-center space-x-3 mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-480">
                         <a href="mailto:{{ .mail }}" class="text-white/80 hover:text-white transition-colors">
-                            <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10">
+                            <div class="w-12 h-12 rounded-full bg-white/5 backdrop-blur-sm flex items-center justify-center hover:bg-white/10">
                                 <i class="fas fa-envelope text-xl"></i>
                             </div>
                         </a>
                         <a href="https://github.com/{{ .github }}" target="_blank" class="text-white/80 hover:text-white transition-colors">
-                            <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10">
+                            <div class="w-12 h-12 rounded-full bg-white/5 backdrop-blur-sm flex items-center justify-center hover:bg-white/10">
                                 <i class="fab fa-github text-xl"></i>
                             </div>
                         </a>
