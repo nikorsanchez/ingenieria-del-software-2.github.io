@@ -37,16 +37,6 @@
                             900: '#111827',
                             950: '#030712'
                         }
-                    },
-                    animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                        'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite'
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-10px)' }
-                        }
                     }
                 }
             }
@@ -61,7 +51,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 relative z-10">
             <div class="text-center">
                 <div class="mb-8 flex justify-center">
-                    <div class="rounded-full bg-primary-500 dark:bg-primary-600 p-4 shadow-none ring-2 ring-primary-200 dark:ring-primary-800/50 animate-float">
+                    <div class="rounded-full bg-primary-500 dark:bg-primary-600 p-4 shadow-none ring-2 ring-primary-200 dark:ring-primary-800/50">
                         <img src="/images/logo.png" alt="Logo" class="w-12 h-12">
                     </div>
                 </div>
@@ -94,7 +84,7 @@
             </div>
         </div>
         
-        <!-- Animated background -->
+        <!-- Background -->
         <div class="absolute inset-0 -z-10 h-full w-full bg-[linear-gradient(to_right,#f0f9ff_1px,transparent_1px),linear-gradient(to_bottom,#f0f9ff_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#1f2937_1px,transparent_1px),linear-gradient(to_bottom,#1f2937_1px,transparent_1px)] bg-[size:6rem_4rem]">
             <div class="absolute inset-0 bg-[radial-gradient(circle_800px_at_50%_200px,#bae6fd,transparent)] dark:bg-[radial-gradient(circle_800px_at_50%_200px,#0c4a6e,transparent)]"></div>
         </div>
@@ -114,8 +104,8 @@
             <div class="flex flex-wrap justify-center gap-8 md:gap-16">
                 <!-- Gestión -->
                 <div class="group relative flex flex-col items-center">
-                    <div class="w-16 h-16 bg-primary-50 dark:bg-gray-800 rounded-xl flex items-center justify-center ring-1 ring-primary-100 dark:ring-gray-700 transition-all duration-300 group-hover:-translate-y-1 cursor-pointer">
-                        <svg class="w-8 h-8 text-primary-500 dark:text-primary-400 group-hover:scale-110 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div class="w-16 h-16 bg-primary-50 dark:bg-gray-800 rounded-xl flex items-center justify-center ring-1 ring-primary-100 dark:ring-gray-700 transition-colors duration-300 cursor-pointer">
+                        <svg class="w-8 h-8 text-primary-500 dark:text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
                         </svg>
                     </div>
@@ -131,8 +121,8 @@
                 
                 <!-- DevOps -->
                 <div class="group relative flex flex-col items-center">
-                    <div class="w-16 h-16 bg-primary-50 dark:bg-gray-800 rounded-xl flex items-center justify-center ring-1 ring-primary-100 dark:ring-gray-700 transition-all duration-300 group-hover:-translate-y-1 cursor-pointer animate-float">
-                        <svg class="w-8 h-8 text-primary-500 dark:text-primary-400 group-hover:scale-110 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div class="w-16 h-16 bg-primary-50 dark:bg-gray-800 rounded-xl flex items-center justify-center ring-1 ring-primary-100 dark:ring-gray-700 transition-colors duration-300 cursor-pointer">
+                        <svg class="w-8 h-8 text-primary-500 dark:text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
                         </svg>
                     </div>
@@ -148,8 +138,8 @@
                 
                 <!-- Arquitectura -->
                 <div class="group relative flex flex-col items-center">
-                    <div class="w-16 h-16 bg-primary-50 dark:bg-gray-800 rounded-xl flex items-center justify-center ring-1 ring-primary-100 dark:ring-gray-700 transition-all duration-300 group-hover:-translate-y-1 cursor-pointer animate-float">
-                        <svg class="w-8 h-8 text-primary-500 dark:text-primary-400 group-hover:scale-110 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div class="w-16 h-16 bg-primary-50 dark:bg-gray-800 rounded-xl flex items-center justify-center ring-1 ring-primary-100 dark:ring-gray-700 transition-colors duration-300 cursor-pointer">
+                        <svg class="w-8 h-8 text-primary-500 dark:text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
                         </svg>
                     </div>
@@ -180,8 +170,8 @@
         
         <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {{ range first 3 .Site.RegularPages }}
-            <article class="group relative rounded-xl border-2 border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 overflow-hidden transition-all duration-200 hover:-translate-y-1">
-                <div class="p-6">
+            <article class="group relative rounded-xl border-2 border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 overflow-hidden transition-colors duration-200">
+                <div class="p-6 h-full flex flex-col">
                     <div class="flex items-center gap-2 mb-4">
                         <span class="inline-flex items-center rounded-full bg-primary-100 dark:bg-primary-900/50 px-2.5 py-1 text-xs font-medium text-primary-600 dark:text-primary-300">
                             {{ with .Params.tags }}{{ index . 0 }}{{ end }}
@@ -193,14 +183,16 @@
                         <a href="{{ .RelPermalink }}" class="after:absolute after:inset-0">{{ .Title }}</a>
                     </h3>
                     
-                    <p class="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">{{ .Summary | truncate 120 "..." }}</p>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3 flex-grow">{{ .Summary | truncate 120 "..." }}</p>
                     
-                    <div class="pt-4 border-t border-gray-100 dark:border-gray-800">
-                        <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 group-hover:bg-primary-100 dark:group-hover:bg-primary-900/50 group-hover:text-primary-500 dark:group-hover:text-primary-400 transition-colors float-right">
-                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                            </svg>
-                        </span>
+                    <div class="pt-4 border-t border-gray-200 dark:border-gray-800">
+                        <div class="flex justify-end">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-white dark:bg-gray-800 text-gray-500 dark:text-gray-400 group-hover:bg-primary-100 dark:group-hover:bg-primary-900/50 group-hover:text-primary-500 dark:group-hover:text-primary-400 transition-colors">
+                                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                </svg>
+                            </span>
+                        </div>
                     </div>
                 </div>
             </article>
