@@ -12,16 +12,15 @@
             darkMode: 'class',
             theme: {
                 extend: {
-                    colors: {
-                    },
+
                     keyframes: {
                         'fade-in': {
-                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
                             '100%': { opacity: '1', transform: 'translateY(0)' }
                         }
                     },
                     animation: {
-                        'fade-in': 'fade-in 0.2s ease-out'
+                        'fade-in': 'fade-in 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
                     }
                 }
             }
@@ -30,49 +29,50 @@
 </head>
 <body class="bg-white dark:bg-gray-950 transition-colors duration-300">
     <!-- Hero Section -->
-    <div class="relative mb-12">
+    <div class="relative mb-16">
         {{ partial "sidebar.html" (dict "context" . "disableSidebar" true) }}
-        <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <div class="text-center space-y-6">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="text-center space-y-8">
                 <div class="animate-fade-in">
-                    <div class="inline-flex rounded-full bg-accent-500 dark:bg-accent-600 p-4 shadow-lg ring-2 ring-accent-100 dark:ring-accent-800/50">
-                        <img src="/images/logo.png" alt="Logo" class="w-12 h-12">
+                    <div class="inline-flex rounded-full bg-accent-500/10 dark:bg-accent-900/20 p-4 ring-1 ring-accent-500/30 dark:ring-accent-700/30">
+                        <img src="/images/logo.png" alt="Logo" class="w-16 h-16">
                     </div>
                 </div>
-                <h1 class="text-4xl font-bold text-gray-900 dark:text-white animate-fade-in">Equipo Docente</h1>
+                <h1 class="text-4xl font-bold text-gray-900 dark:text-white/90 animate-fade-in tracking-tight">Equipo Docente</h1>
             </div>
         </div>
     </div>
 
     <!-- Team Grid -->
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {{ range .Site.Data.team.team }}
             <!-- Team Member Card -->
-            <div class="group relative aspect-square bg-gray-100 dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+            <div class="group relative aspect-square bg-gray-50 dark:bg-gray-900 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
                 <img 
                     src="{{ .pic }}" 
                     alt="{{ .name }}"
-                    class="w-full h-full object-cover object-center"
+                    class="w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
                 >
                 
-                <!-- Name & Social Overlay -->
-                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-4">
-                    <h3 class="text-white font-semibold text-lg mb-2 text-center">{{ .name }}</h3>
-                    
+                <!-- Overlay Content -->
+                <div class="absolute inset-0 bg-gradient-to-t from-gray-900/70 via-gray-900/40 to-transparent flex flex-col justify-end p-5">
                     <!-- Social Icons -->
-                    <div class="flex justify-center space-x-4 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-200">
-                        <a href="mailto:{{ .mail }}" class="inline-block transform hover:scale-110 transition-transform focus:scale-110">
-                            <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 focus:bg-white/20">
-                                <i class="fas fa-envelope text-lg"></i>
+                    <div class="flex justify-center space-x-3 mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <a href="mailto:{{ .mail }}" class="text-white/80 hover:text-white transition-colors">
+                            <div class="w-9 h-9 rounded-full bg-white/5  flex items-center justify-center hover:bg-white/10">
+                                <i class="fas fa-envelope text-sm"></i>
                             </div>
                         </a>
-                        <a href="https://github.com/{{ .github }}" target="_blank" class="inline-block transform hover:scale-110 transition-transform focus:scale-110">
-                            <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 focus:bg-white/20">
-                                <i class="fab fa-github text-lg"></i>
+                        <a href="https://github.com/{{ .github }}" target="_blank" class="text-white/80 hover:text-white transition-colors">
+                            <div class="w-9 h-9 rounded-full bg-white/5  flex items-center justify-center hover:bg-white/10">
+                                <i class="fab fa-github text-sm"></i>
                             </div>
                         </a>
                     </div>
+                    
+                    <!-- Name -->
+                    <h3 class="text-white font-medium text-lg text-center leading-tight">{{ .name }}</h3>
                 </div>
             </div>
             {{ end }}
