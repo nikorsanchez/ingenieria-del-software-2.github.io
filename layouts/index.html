@@ -13,8 +13,20 @@
                 extend: {
                     colors: {
                         primary: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            300: '#cbd5e1',
+                            400: '#94a3b8',
+                            500: '#64748b',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        },
+                        accent: {
                             50: '#f0f9ff',
-                            100: '#e0f2fe',
+                            100: '#e0f7ff',
                             200: '#bae6fd',
                             300: '#7dd3fc',
                             400: '#38bdf8',
@@ -51,7 +63,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 relative z-10">
             <div class="text-center">
                 <div class="mb-8 flex justify-center">
-                    <div class="rounded-full bg-primary-500 dark:bg-primary-600 p-4 shadow-none ring-2 ring-primary-200 dark:ring-primary-800/50">
+                    <div class="rounded-full bg-accent-500 dark:bg-accent-600 p-4 shadow-none ring-2 ring-accent-100 dark:ring-accent-800/50">
                         <img src="/images/logo.png" alt="Logo" class="w-12 h-12">
                     </div>
                 </div>
@@ -66,7 +78,7 @@
                 
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
                     <a href="https://forms.gle/snBjDqo6sjcxeczs8" 
-                       class="inline-flex items-center justify-center bg-primary-500 hover:bg-primary-600 text-white px-8 py-3 rounded-full text-base font-medium transition-colors dark:bg-primary-600 dark:hover:bg-primary-700 ring-2 ring-primary-200 dark:ring-primary-800/50">
+                       class="inline-flex items-center justify-center bg-accent-500 hover:bg-accent-600 text-white px-8 py-3 rounded-full text-base font-medium transition-colors dark:bg-accent-600 dark:hover:bg-accent-700 ring-2 ring-accent-100 dark:ring-accent-800/50">
                         <span>Inscribirse</span>
                         <svg class="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
@@ -86,12 +98,12 @@
         
         <!-- Background -->
         <div class="absolute inset-0 -z-10 h-full w-full bg-[linear-gradient(to_right,#f0f9ff_1px,transparent_1px),linear-gradient(to_bottom,#f0f9ff_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#1f2937_1px,transparent_1px),linear-gradient(to_bottom,#1f2937_1px,transparent_1px)] bg-[size:6rem_4rem]">
-            <div class="absolute inset-0 bg-[radial-gradient(circle_800px_at_50%_200px,#bae6fd,transparent)] dark:bg-[radial-gradient(circle_800px_at_50%_200px,#0c4a6e,transparent)]"></div>
+            <div class="absolute inset-0 bg-[radial-gradient(circle_800px_at_50%_200px,#e0f7ff,transparent)] dark:bg-[radial-gradient(circle_800px_at_50%_200px,#0c4a6e,transparent)]"></div>
         </div>
         
         <!-- Floating shapes -->
-        <div class="absolute top-1/4 left-10 w-24 h-24 bg-primary-200/70 dark:bg-primary-900/30 rounded-full mix-blend-multiply dark:mix-blend-lighten blur-xl opacity-70 animate-pulse-slow"></div>
-        <div class="absolute bottom-1/4 right-10 w-36 h-36 bg-primary-300/50 dark:bg-pink-900/30 rounded-full mix-blend-multiply dark:mix-blend-lighten blur-xl opacity-70 animate-pulse-slow" style="animation-delay: 2s;"></div>
+        <div class="absolute top-1/4 left-10 w-24 h-24 bg-accent-100/70 dark:bg-accent-900/20 rounded-full mix-blend-multiply dark:mix-blend-lighten blur-xl opacity-70"></div>
+        <div class="absolute bottom-1/4 right-10 w-36 h-36 bg-accent-200/50 dark:bg-accent-800/20 rounded-full mix-blend-multiply dark:mix-blend-lighten blur-xl opacity-70"></div>
     </div>
 
     <!-- Course Icons Section -->
@@ -104,8 +116,8 @@
             <div class="flex flex-wrap justify-center gap-8 md:gap-16">
                 <!-- Gestión -->
                 <div class="group relative flex flex-col items-center">
-                    <div class="w-16 h-16 bg-primary-50 dark:bg-gray-800 rounded-xl flex items-center justify-center ring-1 ring-primary-100 dark:ring-gray-700 transition-colors duration-300 cursor-pointer">
-                        <svg class="w-8 h-8 text-primary-500 dark:text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div class="w-16 h-16 bg-accent-50 dark:bg-gray-800 rounded-xl flex items-center justify-center ring-1 ring-accent-100 dark:ring-gray-700 transition-colors duration-300 cursor-pointer">
+                        <svg class="w-8 h-8 text-accent-500 dark:text-accent-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
                         </svg>
                     </div>
@@ -121,8 +133,8 @@
                 
                 <!-- DevOps -->
                 <div class="group relative flex flex-col items-center">
-                    <div class="w-16 h-16 bg-primary-50 dark:bg-gray-800 rounded-xl flex items-center justify-center ring-1 ring-primary-100 dark:ring-gray-700 transition-colors duration-300 cursor-pointer">
-                        <svg class="w-8 h-8 text-primary-500 dark:text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div class="w-16 h-16 bg-accent-50 dark:bg-gray-800 rounded-xl flex items-center justify-center ring-1 ring-accent-100 dark:ring-gray-700 transition-colors duration-300 cursor-pointer">
+                        <svg class="w-8 h-8 text-accent-500 dark:text-accent-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
                         </svg>
                     </div>
@@ -138,8 +150,8 @@
                 
                 <!-- Arquitectura -->
                 <div class="group relative flex flex-col items-center">
-                    <div class="w-16 h-16 bg-primary-50 dark:bg-gray-800 rounded-xl flex items-center justify-center ring-1 ring-primary-100 dark:ring-gray-700 transition-colors duration-300 cursor-pointer">
-                        <svg class="w-8 h-8 text-primary-500 dark:text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div class="w-16 h-16 bg-accent-50 dark:bg-gray-800 rounded-xl flex items-center justify-center ring-1 ring-accent-100 dark:ring-gray-700 transition-colors duration-300 cursor-pointer">
+                        <svg class="w-8 h-8 text-accent-500 dark:text-accent-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
                         </svg>
                     </div>
@@ -157,10 +169,10 @@
     </div>
 
     <!-- Recent Posts -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="bg-gray-50 dark:bg-gray-950 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div class="flex items-center justify-between mb-12">
             <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Anuncios Recientes</h2>
-            <a href="/blog" class="text-primary-500 dark:text-primary-400 hover:underline text-sm font-medium flex items-center">
+            <a href="/blog" class="text-accent-500 dark:text-accent-400 hover:underline text-sm font-medium flex items-center">
                 Ver todos
                 <svg class="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -170,16 +182,16 @@
         
         <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {{ range first 3 .Site.RegularPages }}
-            <article class="group relative rounded-xl border-2 border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 overflow-hidden transition-colors duration-200">
+            <article class="bg-white group relative rounded-xl border-2 border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 overflow-hidden transition-colors duration-200">
                 <div class="p-6 h-full flex flex-col">
                     <div class="flex items-center gap-2 mb-4">
-                        <span class="inline-flex items-center rounded-full bg-primary-100 dark:bg-primary-900/50 px-2.5 py-1 text-xs font-medium text-primary-600 dark:text-primary-300">
+                        <span class="inline-flex items-center rounded-full bg-accent-100 dark:bg-accent-900/50 px-2.5 py-1 text-xs font-medium text-accent-700 dark:text-accent-300">
                             {{ with .Params.tags }}{{ index . 0 }}{{ end }}
                         </span>
                         <span class="text-xs text-gray-500 dark:text-gray-400">{{ .Date.Format "2 de January, 2006" }}</span>
                     </div>
                     
-                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white group-hover:text-primary-500 dark:group-hover:text-primary-400 transition-colors mb-3">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white group-hover:text-accent-500 dark:group-hover:text-accent-400 transition-colors mb-3">
                         <a href="{{ .RelPermalink }}" class="after:absolute after:inset-0">{{ .Title }}</a>
                     </h3>
                     
@@ -187,7 +199,7 @@
                     
                     <div class="pt-4 border-t border-gray-200 dark:border-gray-800">
                         <div class="flex justify-end">
-                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-white dark:bg-gray-800 text-gray-500 dark:text-gray-400 group-hover:bg-primary-100 dark:group-hover:bg-primary-900/50 group-hover:text-primary-500 dark:group-hover:text-primary-400 transition-colors">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-white dark:bg-gray-800 text-gray-500 dark:text-gray-400 group-hover:bg-accent-100 dark:group-hover:bg-accent-900/50 group-hover:text-accent-500 dark:group-hover:text-accent-400 transition-colors">
                                 <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                                 </svg>
