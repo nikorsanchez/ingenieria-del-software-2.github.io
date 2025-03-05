@@ -12,7 +12,6 @@
             darkMode: 'class',
             theme: {
                 extend: {
-
                     keyframes: {
                         'fade-in': {
                             '0%': { opacity: '0', transform: 'translateY(20px)' },
@@ -33,22 +32,22 @@
         {{ partial "sidebar.html" (dict "context" . "disableSidebar" true) }}
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <div class="text-center space-y-8">
-                <div class="animate-fade-in">
+                <div>
                     <div class="inline-flex rounded-full bg-accent-500/10 dark:bg-accent-900/20 p-4 ring-1 ring-accent-500/30 dark:ring-accent-700/30">
                         <img src="/images/logo.png" alt="Logo" class="w-16 h-16">
                     </div>
                 </div>
-                <h1 class="text-4xl font-bold text-gray-900 dark:text-white/90 animate-fade-in tracking-tight">Equipo Docente</h1>
+                <h1 class="text-4xl font-bold text-gray-900 dark:text-white/90 tracking-tight">Equipo Docente</h1>
             </div>
         </div>
     </div>
 
     <!-- Team Grid -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
             {{ range .Site.Data.team.team }}
             <!-- Team Member Card -->
-            <div class="group relative aspect-square bg-gray-50 dark:bg-gray-900 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+            <div class="group relative aspect-square w-full max-w-xs mx-auto bg-gray-50 dark:bg-gray-900 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
                 <img 
                     src="{{ .pic }}" 
                     alt="{{ .name }}"
@@ -56,17 +55,17 @@
                 >
                 
                 <!-- Overlay Content -->
-                <div class="absolute inset-0 bg-gradient-to-t from-gray-900/70 via-gray-900/40 to-transparent flex flex-col justify-end p-5">
+                <div class="absolute inset-0 bg-gradient-to-t from-gray-900/70 via-gray-900/40 to-transparent group-hover:from-dark-950/80 group-hover:via-gray-950/60 group-hover:to-gray-950/30 flex flex-col justify-end p-5 transition-colors">
                     <!-- Social Icons -->
                     <div class="flex justify-center space-x-3 mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <a href="mailto:{{ .mail }}" class="text-white/80 hover:text-white transition-colors">
-                            <div class="w-9 h-9 rounded-full bg-white/5  flex items-center justify-center hover:bg-white/10">
-                                <i class="fas fa-envelope text-sm"></i>
+                            <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10">
+                                <i class="fas fa-envelope text-xl"></i>
                             </div>
                         </a>
                         <a href="https://github.com/{{ .github }}" target="_blank" class="text-white/80 hover:text-white transition-colors">
-                            <div class="w-9 h-9 rounded-full bg-white/5  flex items-center justify-center hover:bg-white/10">
-                                <i class="fab fa-github text-sm"></i>
+                            <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10">
+                                <i class="fab fa-github text-xl"></i>
                             </div>
                         </a>
                     </div>
