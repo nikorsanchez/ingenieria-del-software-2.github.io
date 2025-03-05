@@ -12,25 +12,16 @@
             darkMode: 'class',
             theme: {
                 extend: {
-                    keyframes: {
-                        'fade-in': {
-                            '0%': { opacity: '0', transform: 'translateY(20px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' }
-                        }
-                    },
-                    animation: {
-                        'fade-in': 'fade-in 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
-                    }
                 }
             }
         }
     </script>
 </head>
-<body class="bg-white dark:bg-gray-950 transition-colors duration-300">
+<body>
     <!-- Hero Section -->
     <div class="relative mb-16">
         {{ partial "sidebar.html" (dict "context" . "disableSidebar" true) }}
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
             <div class="text-center space-y-8">
                 <div>
                     <div class="inline-flex rounded-full bg-accent-500/10 dark:bg-accent-900/20 p-4 ring-1 ring-accent-500/30 dark:ring-accent-700/30">
@@ -43,7 +34,7 @@
     </div>
 
     <!-- Team Grid -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
             {{ range .Site.Data.team.team }}
             <!-- Team Member Card -->
@@ -51,13 +42,13 @@
                 <img 
                     src="{{ .pic }}" 
                     alt="{{ .name }}"
-                    class="w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                    class="w-full h-full object-cover object-center transition-transform duration-450 group-hover:scale-105"
                 >
                 
                 <!-- Overlay Content -->
-                <div class="absolute inset-0 bg-gradient-to-t from-gray-900/70 via-gray-900/40 to-transparent group-hover:from-dark-950/80 group-hover:via-gray-950/60 group-hover:to-gray-950/30 flex flex-col justify-end p-5 transition-colors">
+                <div class="absolute inset-0 bg-gradient-to-t from-gray-900/40 via-gray-900/20 to-transparent group-hover:from-dark-950/80 group-hover:via-gray-950/60 group-hover:to-gray-950/30 flex flex-col justify-end p-5 transition-colors">
                     <!-- Social Icons -->
-                    <div class="flex justify-center space-x-3 mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div class="flex justify-center space-x-3 mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-450">
                         <a href="mailto:{{ .mail }}" class="text-white/80 hover:text-white transition-colors">
                             <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10">
                                 <i class="fas fa-envelope text-xl"></i>
@@ -71,7 +62,7 @@
                     </div>
                     
                     <!-- Name -->
-                    <h3 class="text-white font-medium text-lg text-center leading-tight">{{ .name }}</h3>
+                    <h3 class="text-white font-medium text-m text-center leading-tight">{{ .name }}</h3>
                 </div>
             </div>
             {{ end }}
