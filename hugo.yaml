@@ -45,10 +45,7 @@ menu:
     - name: "Contacto"
       pageRef: "/contact"
       weight: 8
-  sidebar:
-    - name: "Calendario"
-      pageRef: "/calendars/2024-2c"
-      weight: 4
+
 
     # - name: "Buscar"
     #   weight: 9
