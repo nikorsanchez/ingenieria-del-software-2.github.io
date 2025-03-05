@@ -7,76 +7,168 @@
     <title>{{ .Site.Title }}</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-[#FAFAFA] min-h-screen">
+<!-- Hero Section -->
+<div class="relative overflow-hidden">
+    {{ partial "sidebar.html" (dict "context" . "disableSidebar" true) }}
     
-    <!-- Hero Section -->
-    <div class="relative">
-        {{ partial "sidebar.html" (dict "context" . "disableSidebar" true) }}
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
-            <div class="text-center">
-                <div class="mb-8 flex justify-center">
-                    <div class="rounded-full bg-black p-3">
-                        <img src="/images/logo.png" alt="Logo" class="w-10 h-10">
-                    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 relative z-10">
+        <div class="text-center staggered-fade-in">
+            <div class="mb-8 flex justify-center">
+                <div class="rounded-full bg-primary-600 dark:bg-primary-500 p-4 shadow-lg animate-float">
+                    <img src="/images/logo.png" alt="Logo" class="w-12 h-12">
                 </div>
-                <h2 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-                    {{ .Site.Title }}
-                </h2>
-                <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-                    Esta es la página web de la materia de la Facultad de Ingeniería de la Universidad de Buenos Aires.
-                </p>
-                <div class="flex justify-center gap-4">
-                    <a href="https://forms.gle/snBjDqo6sjcxeczs8" 
-                       class="bg-black text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-gray-800 transition-colors">
-                        Inscribirse
-                    </a>
-                    <a href="/material"
-                       class="bg-gray-100 text-gray-900 px-6 py-2.5 rounded-full text-sm font-medium hover:bg-gray-200 transition-colors">
-                        Ver programa
-                    </a>
+            </div>
+            
+            <h1 class="text-4xl sm:text-6xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight">
+                {{ .Site.Title }}
+            </h1>
+            
+            <p class="text-xl text-gray-600 dark:text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
+                Esta es la página web de la materia de la Facultad de Ingeniería de la Universidad de Buenos Aires.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="https://forms.gle/snBjDqo6sjcxeczs8" 
+                   class="inline-flex items-center justify-center bg-primary-600 hover:bg-primary-700 text-white px-8 py-3 rounded-full text-base font-medium transition-colors shadow-md hover:shadow-lg dark:bg-primary-500 dark:hover:bg-primary-600">
+                    <span>Inscribirse</span>
+                    <svg class="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                    </svg>
+                </a>
+                
+                <a href="/material"
+                   class="inline-flex items-center justify-center bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 border border-gray-300 dark:border-gray-700 px-8 py-3 rounded-full text-base font-medium hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors shadow-md hover:shadow-lg">
+                    <span>Ver programa</span>
+                    <svg class="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Animated background -->
+    <div class="absolute inset-0 -z-10 h-full w-full bg-white dark:bg-gray-950 bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#1f2937_1px,transparent_1px),linear-gradient(to_bottom,#1f2937_1px,transparent_1px)] bg-[size:6rem_4rem]">
+        <div class="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_800px_at_50%_200px,#f0f9ff,transparent)] dark:bg-[radial-gradient(circle_800px_at_50%_200px,#0c4a6e,transparent)]"></div>
+    </div>
+    
+    <!-- Floating shapes -->
+    <div class="absolute top-1/4 left-10 w-24 h-24 bg-blue-50 dark:bg-blue-900/30 rounded-full mix-blend-multiply dark:mix-blend-lighten filter blur-xl opacity-70 animate-pulse-slow"></div>
+    <div class="absolute bottom-1/4 right-10 w-36 h-36 bg-pink-50 dark:bg-pink-900/30 rounded-full mix-blend-multiply dark:mix-blend-lighten filter blur-xl opacity-70 animate-pulse-slow" style="animation-delay: 2s;"></div>
+</div>
+
+<!-- Course Icons Section -->
+<div class="bg-white dark:bg-gray-900 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Áreas de Estudio</h2>
+        </div>
+        
+        <div class="flex flex-wrap justify-center gap-8 md:gap-16">
+            <!-- Gestión -->
+            <div class="group relative flex flex-col items-center">
+                <div class="w-16 h-16 bg-gray-50 dark:bg-gray-800 rounded-xl flex items-center justify-center shadow-md group-hover:shadow-lg transition-all duration-300 group-hover:-translate-y-1 cursor-pointer">
+                    <svg class="w-8 h-8 text-primary-500 dark:text-primary-400 group-hover:scale-110 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
+                    </svg>
+                </div>
+                <span class="mt-2 text-sm font-medium text-gray-900 dark:text-white">Gestión</span>
+                
+                <!-- Tooltip with detailed information -->
+                <div class="absolute top-full mt-2 w-56 bg-white dark:bg-gray-800 rounded-xl p-3 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-10">
+                    <p class="text-xs text-gray-600 dark:text-gray-300">
+                        Procesos de desarrollo de sistemas software de gran escala y métodos ágiles como Scrum, Kanban y XP.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- DevOps -->
+            <div class="group relative flex flex-col items-center">
+                <div class="w-16 h-16 bg-gray-50 dark:bg-gray-800 rounded-xl flex items-center justify-center shadow-md group-hover:shadow-lg transition-all duration-300 group-hover:-translate-y-1 cursor-pointer animate-float" style="animation-delay: 0.5s;">
+                    <svg class="w-8 h-8 text-primary-500 dark:text-primary-400 group-hover:scale-110 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                    </svg>
+                </div>
+                <span class="mt-2 text-sm font-medium text-gray-900 dark:text-white">DevOps</span>
+                
+                <!-- Tooltip with detailed information -->
+                <div class="absolute top-full mt-2 w-56 bg-white dark:bg-gray-800 rounded-xl p-3 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-10">
+                    <p class="text-xs text-gray-600 dark:text-gray-300">
+                        Gestión de configuración, control de versiones, Delivery Pipeline e Infraestructura como Código.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Arquitectura -->
+            <div class="group relative flex flex-col items-center">
+                <div class="w-16 h-16 bg-gray-50 dark:bg-gray-800 rounded-xl flex items-center justify-center shadow-md group-hover:shadow-lg transition-all duration-300 group-hover:-translate-y-1 cursor-pointer animate-float" style="animation-delay: 1s;">
+                    <svg class="w-8 h-8 text-primary-500 dark:text-primary-400 group-hover:scale-110 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                    </svg>
+                </div>
+                <span class="mt-2 text-sm font-medium text-gray-900 dark:text-white">Arquitectura</span>
+                
+                <!-- Tooltip with detailed information -->
+                <div class="absolute top-full mt-2 w-56 bg-white dark:bg-gray-800 rounded-xl p-3 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-10">
+                    <p class="text-xs text-gray-600 dark:text-gray-300">
+                        Calidad interna y externa, atributos de calidad y arquitecturas para software a gran escala.
+                    </p>
                 </div>
             </div>
         </div>
-        <div class="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem]">
-            <div class="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_500px_at_50%_200px,#C9EBFF,transparent)]"></div>
-        </div>
     </div>
+</div>
 
-    <!-- Recent Posts -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <h2 class="text-2xl font-bold text-gray-900 mb-8">Anuncios Recientes</h2>
-        
-        <div class="grid gap-6">
-            {{ range first 3 .Site.RegularPages }}
-            <article class="group relative rounded-xl border border-gray-200 bg-white p-6 hover:border-gray-300 transition-colors">
-                <div class="flex items-start justify-between">
-                    <div>
-                        <h3 class="text-xl font-semibold text-gray-900 group-hover:text-blue-500 transition-colors">
-                            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-                        </h3>
-                        <p class="mt-2 text-gray-600">{{ .Summary | truncate 120 "..." }}</p>
-                    </div>
-                    <span class="flex h-6 w-6 items-center justify-center rounded-full bg-gray-100">→</span>
-                </div>
-                <div class="mt-4 flex items-center gap-4">
-                    <span class="text-sm text-gray-500">{{ .Date.Format "2 de January, 2006" }}</span>
-                    <span class="text-sm text-gray-500">•</span>
-                    <span class="inline-flex items-center rounded-full bg-blue-50 px-2 py-1 text-xs text-blue-600">
+<!-- Recent Posts -->
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="flex items-center justify-between mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Anuncios Recientes</h2>
+        <a href="/blog" class="text-primary-600 dark:text-primary-400 hover:underline text-sm font-medium flex items-center">
+            Ver todos
+            <svg class="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+        </a>
+    </div>
+    
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {{ range first 3 .Site.RegularPages }}
+        <article class="group relative rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 overflow-hidden transition-all duration-200 hover:shadow-lg hover:-translate-y-1">
+            <div class="p-6">
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="inline-flex items-center rounded-full bg-blue-50 dark:bg-blue-900/50 px-2.5 py-1 text-xs font-medium text-blue-600 dark:text-blue-300">
                         {{ with .Params.tags }}{{ index . 0 }}{{ end }}
                     </span>
+                    <span class="text-xs text-gray-500 dark:text-gray-400">{{ .Date.Format "2 de January, 2006" }}</span>
                 </div>
-            </article>
-            {{ end }}
-        </div>
-
-        <div class="mt-8 text-center">
-            <a href="/blog"
-               class="inline-flex items-center justify-center rounded-full border border-gray-200 bg-white px-6 py-2.5 text-sm font-medium text-gray-900 hover:border-gray-300 transition-colors">
-                Ver más anuncios →
-            </a>
-        </div>
+                
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors mb-3">
+                    <a href="{{ .RelPermalink }}" class="after:absolute after:inset-0">{{ .Title }}</a>
+                </h3>
+                
+                <p class="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">{{ .Summary | truncate 120 "..." }}</p>
+                
+                <div class="pt-4 border-t border-gray-100 dark:border-gray-800">
+                    <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 group-hover:bg-primary-50 dark:group-hover:bg-primary-900/50 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors float-right">
+                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </span>
+                </div>
+            </div>
+        </article>
+        {{ end }}
     </div>
 
-</body>
-</html>
+    <div class="mt-16 text-center">
+        <a href="/blog"
+           class="inline-flex items-center justify-center rounded-full border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 px-8 py-3 text-base font-medium text-gray-900 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors shadow-md hover:shadow-lg">
+            Ver más anuncios
+            <svg class="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+        </a>
+    </div>
+</div>
+
 {{ end }}
