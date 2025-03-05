@@ -1,6 +1,5 @@
 ---
 title: Calendario 
 subtitle: Calendario de actividades
-sidebar:
-  exclude: true
+url: "/calendars/2024-2c"
 ---
