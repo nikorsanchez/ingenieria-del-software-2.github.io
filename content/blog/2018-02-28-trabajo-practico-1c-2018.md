@@ -8,4 +8,4 @@ tags:
 title: Stories
 ---
 
-Ya se encuentra disponible el enunciado correspondiente al trabajo práctico. El mismo puede ser accedido a través del siguiente [link](https://github.com/taller-de-programacion-2/taller-de-programacion-2.github.io/tree/master/trabajo-practico/enunciados/2018/1/stories.md).
+Ya se encuentra disponible el enunciado correspondiente al trabajo práctico. El mismo puede ser accedido a través del siguiente [link](https://ingenieria-del-software-2.github.io/tps/historico/2018/1/stories).

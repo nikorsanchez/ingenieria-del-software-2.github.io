@@ -6,73 +6,220 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ .Site.Title }}</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            300: '#cbd5e1',
+                            400: '#94a3b8',
+                            500: '#64748b',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        },
+                        accent: {
+                            50: '#f0f9ff',
+                            100: '#e0f7ff',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        gray: {
+                            50: '#f9fafb',
+                            100: '#f3f4f6',
+                            200: '#e5e7eb',
+                            300: '#d1d5db',
+                            400: '#9ca3af',
+                            500: '#6b7280',
+                            600: '#4b5563',
+                            700: '#374151',
+                            800: '#1f2937',
+                            900: '#111827',
+                            950: '#030712'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body class="bg-[#FAFAFA] min-h-screen">
-    
+<body class="bg-white dark:bg-gray-950 transition-colors duration-300">
     <!-- Hero Section -->
-    <div class="relative">
+    <div class="relative overflow-hidden">
         {{ partial "sidebar.html" (dict "context" . "disableSidebar" true) }}
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 relative z-10">
             <div class="text-center">
                 <div class="mb-8 flex justify-center">
-                    <div class="rounded-full bg-black p-3">
-                        <img src="/images/logo.png" alt="Logo" class="w-10 h-10">
+                    <div class="rounded-full bg-gray-950 dark:bg-accent-600 p-4 shadow-none ring-2 ring-accent-100 dark:ring-accent-800/50">
+                        <img src="/images/logo.png" alt="Logo" class="w-12 h-12">
                     </div>
                 </div>
-                <h2 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
+                
+                <h1 class="text-4xl sm:text-6xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight">
                     {{ .Site.Title }}
-                </h2>
-                <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+                </h1>
+                
+                <p class="text-xl text-gray-600 dark:text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
                     Esta es la página web de la materia de la Facultad de Ingeniería de la Universidad de Buenos Aires.
                 </p>
-                <div class="flex justify-center gap-4">
+                
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
                     <a href="https://forms.gle/snBjDqo6sjcxeczs8" 
-                       class="bg-black text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-gray-800 transition-colors">
-                        Inscribirse
+                       class="inline-flex items-center justify-center bg-gray-950 hover:bg-accent-600 text-white px-8 py-3 rounded-full text-base font-medium transition-colors dark:bg-accent-600 dark:hover:bg-accent-700 ring-2 ring-accent-100 dark:ring-accent-800/50">
+                        <span>Inscribirse</span>
+                        <svg class="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                        </svg>
                     </a>
+                    
                     <a href="/material"
-                       class="bg-gray-100 text-gray-900 px-6 py-2.5 rounded-full text-sm font-medium hover:bg-gray-200 transition-colors">
-                        Ver programa
+                       class="inline-flex items-center justify-center bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 border-2 border-gray-200 dark:border-gray-700 px-8 py-3 rounded-full text-base font-medium hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors ring-1 ring-gray-200 dark:ring-gray-700/50">
+                        <span>Ver programa</span>
+                        <svg class="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
                     </a>
                 </div>
             </div>
         </div>
-        <div class="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem]">
-            <div class="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_500px_at_50%_200px,#C9EBFF,transparent)]"></div>
+        
+        <!-- Background -->
+        <div class="absolute inset-0 -z-10 h-full w-full bg-[linear-gradient(to_right,#f0f9ff_1px,transparent_1px),linear-gradient(to_bottom,#f0f9ff_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#1f2937_1px,transparent_1px),linear-gradient(to_bottom,#1f2937_1px,transparent_1px)] bg-[size:6rem_4rem]">
+            <div class="absolute inset-0 bg-[radial-gradient(circle_500px_at_20%_200px,#e0f7ff,transparent)] dark:bg-[radial-gradient(circle_800px_at_50%_200px,#0c4a6e,transparent)]"></div>
+        </div>
+        
+        <!-- Floating shapes -->
+        <div class="absolute top-1/4 left-10 w-24 h-24 bg-accent-100/70 dark:bg-accent-900/20 rounded-full mix-blend-multiply dark:mix-blend-lighten blur-xl opacity-70"></div>
+        <div class="absolute bottom-1/4 right-10 w-36 h-36 bg-accent-200/50 dark:bg-accent-800/20 rounded-full mix-blend-multiply dark:mix-blend-lighten blur-xl opacity-70"></div>
+    </div>
+
+    <!-- Course Icons Section -->
+    <div class="bg-white dark:bg-gray-900 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Áreas de Estudio</h2>
+            </div>
+            
+            <div class="flex flex-wrap justify-center gap-8 md:gap-16">
+                <!-- Gestión -->
+                <div class="group relative flex flex-col items-center">
+                    <div class="w-16 h-16 bg-accent-50 dark:bg-gray-800 rounded-xl flex items-center justify-center ring-1 ring-gray-200 dark:ring-gray-700 transition-colors duration-300 cursor-pointer">
+                        <svg class="w-8 h-8 text-accent-500 dark:text-accent-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
+                        </svg>
+                    </div>
+                    <span class="mt-2 text-sm font-medium text-gray-900 dark:text-white">Gestión</span>
+                    
+                    <!-- Tooltip -->
+                    <div class="absolute top-full mt-2 w-56 bg-white dark:bg-gray-800 rounded-xl p-3 ring-1 ring-gray-200 dark:ring-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-10">
+                        <p class="text-xs text-gray-600 dark:text-gray-300">
+                            Procesos de desarrollo de sistemas software de gran escala y métodos ágiles como Scrum, Kanban y XP.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- DevOps -->
+                <div class="group relative flex flex-col items-center">
+                    <div class="w-16 h-16 bg-accent-50 dark:bg-gray-800 rounded-xl flex items-center justify-center ring-1 ring-gray-200 dark:ring-gray-700 transition-colors duration-300 cursor-pointer">
+                        <svg class="w-8 h-8 text-accent-500 dark:text-accent-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                        </svg>
+                    </div>
+                    <span class="mt-2 text-sm font-medium text-gray-900 dark:text-white">DevOps</span>
+                    
+                    <!-- Tooltip -->
+                    <div class="absolute top-full mt-2 w-56 bg-white dark:bg-gray-800 rounded-xl p-3 ring-1 ring-gray-200 dark:ring-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-10">
+                        <p class="text-xs text-gray-600 dark:text-gray-300">
+                            Gestión de configuración, CICD, Cloud, Site Reliability Engineering, Observabilidad e Infraestructura como Código.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Arquitectura -->
+                <div class="group relative flex flex-col items-center">
+                    <div class="w-16 h-16 bg-accent-50 dark:bg-gray-800 rounded-xl flex items-center justify-center ring-1 ring-gray-200 dark:ring-gray-700 transition-colors duration-300 cursor-pointer">
+                        <svg class="w-8 h-8 text-accent-500 dark:text-accent-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                        </svg>
+                    </div>
+                    <span class="mt-2 text-sm font-medium text-gray-900 dark:text-white">Arquitectura</span>
+                    
+                    <!-- Tooltip -->
+                    <div class="absolute top-full mt-2 w-56 bg-white dark:bg-gray-800 rounded-xl p-3 ring-1 ring-gray-200 dark:ring-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-10">
+                        <p class="text-xs text-gray-600 dark:text-gray-300">
+                            Calidad interna y externa, atributos de calidad, Domain Driven Desing y arquitecturas para software a gran escala.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
     <!-- Recent Posts -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <h2 class="text-2xl font-bold text-gray-900 mb-8">Anuncios Recientes</h2>
+    <div class="bg-gray-50 dark:bg-gray-950 mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="flex items-center justify-between mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Anuncios Recientes</h2>
+            <a href="/blog" class="text-accent-500 dark:text-accent-400 hover:underline text-sm font-medium flex items-center">
+                Ver todos
+                <svg class="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </a>
+        </div>
         
-        <div class="grid gap-6">
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {{ range first 3 .Site.RegularPages }}
-            <article class="group relative rounded-xl border border-gray-200 bg-white p-6 hover:border-gray-300 transition-colors">
-                <div class="flex items-start justify-between">
-                    <div>
-                        <h3 class="text-xl font-semibold text-gray-900 group-hover:text-blue-500 transition-colors">
-                            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-                        </h3>
-                        <p class="mt-2 text-gray-600">{{ .Summary | truncate 120 "..." }}</p>
+            <article class="mx-2 group relative rounded-xl border-2 border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 overflow-hidden transition-colors duration-200">
+                <div class="p-6 h-full flex flex-col">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="inline-flex items-center rounded-full bg-accent-100 dark:bg-accent-900/50 px-2.5 py-1 text-xs font-medium text-accent-700 dark:text-accent-300">
+                            {{ with .Params.tags }}{{ index . 0 }}{{ end }}
+                        </span>
+                        <span class="text-xs text-gray-500 dark:text-gray-400">{{ .Date.Format "2 de January, 2006" }}</span>
                     </div>
-                    <span class="flex h-6 w-6 items-center justify-center rounded-full bg-gray-100">→</span>
-                </div>
-                <div class="mt-4 flex items-center gap-4">
-                    <span class="text-sm text-gray-500">{{ .Date.Format "2 de January, 2006" }}</span>
-                    <span class="text-sm text-gray-500">•</span>
-                    <span class="inline-flex items-center rounded-full bg-blue-50 px-2 py-1 text-xs text-blue-600">
-                        {{ with .Params.tags }}{{ index . 0 }}{{ end }}
-                    </span>
+                    
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white group-hover:text-accent-500 dark:group-hover:text-accent-400 transition-colors mb-2">
+                        <a href="{{ .RelPermalink }}" class="after:absolute after:inset-0">{{ .Title }}</a>
+                    </h3>
+                    
+                    <p class="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
+                        {{ .Summary | truncate 100 "..." }}
+                    </p>
+                    
+                    <div class="mt-auto pt-2">
+                        <div class="flex justify-end">
+                            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-white dark:bg-gray-800 text-gray-500 dark:text-gray-400 group-hover:bg-accent-100 dark:group-hover:bg-accent-900/50 group-hover:text-accent-500 dark:group-hover:text-accent-400 transition-colors">
+                                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
                 </div>
             </article>
             {{ end }}
         </div>
 
-        <div class="mt-8 text-center">
+        <div class="mt-16 text-center">
             <a href="/blog"
-               class="inline-flex items-center justify-center rounded-full border border-gray-200 bg-white px-6 py-2.5 text-sm font-medium text-gray-900 hover:border-gray-300 transition-colors">
-                Ver más anuncios →
+               class="inline-flex items-center justify-center rounded-full border-2 border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 px-8 py-3 text-base font-medium text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors ring-1 ring-gray-200 dark:ring-gray-700/50">
+                Ver más anuncios
+                <svg class="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
             </a>
         </div>
     </div>

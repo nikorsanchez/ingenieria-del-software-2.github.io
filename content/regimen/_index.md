@@ -9,16 +9,7 @@ Link de inscripci&oacute;n: [`https://forms.gle/f1C5CtT1vyqZfog76`](https://form
 
 ### Docentes
 
-* Agustín Rojas
-* Rodrigo Echecone
-* Dante Reinaudo
-* Matias Fonseca
-* Matias Rotondo
-* Nicolas Fernandes Theillet
-* Paulo Cuneo
-* Lucas Lavandeira
-* Ignacio Carol Lugones
-* Luis Eduardo	Cusihuaman
+{{< team >}}
 
 ### Correlativas
 

@@ -9,4 +9,4 @@ title: FI-UBER
 ---
 Ya se encuentra disponible el enunciado del trabajo práctico
 
-[Enunciado](https://ingenieria-del-software-2.github.io/works/statement/2022/2/enunciado/)
+[Enunciado](https://ingenieria-del-software-2.github.io/tps/historico/2022/2/enunciado/)
