@@ -30,7 +30,7 @@ Fecha máxima de entrega: 20/03/2025
 
 Se deberá completar el siguiente formulario con Padrón, Nombre, Apellido y Link al repositorio con la solución
 
-[Formulario](https://forms.gle/tG2HtDSyfrtrRigt9)
+[Formulario](https://forms.gle/cNap3sDAnnxCXQRXA)
 
 Luego de haber completado este formulario, les solicitaremos que agreguen al usuario del corrector asignado.
 
