@@ -48,3 +48,13 @@ team:
     pic: "/images/professors/edu.png"
     mail: "lcusihuaman@fi.uba.ar"
     github: "LuisCusihuaman"
+
+  - name: Gaston Frenkel
+    pic: "/images/professors/gastyy.png"
+    mail: "gggg@fi.uba.ar"
+    github: "Juani-tech"
+
+  - name: Juan Ignacio Perez Di Chiazza
+    pic: "/images/professors/juani.png"
+    mail: "jjjj@fi.uba.ar"
+    github: "LuisCusihuaman"
