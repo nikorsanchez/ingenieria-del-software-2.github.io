@@ -100,8 +100,10 @@ paths:
             schema:
               type: object
               properties:
-                message:
-                  type: string
+                title:
+                    type: string
+                description:
+                    type: string
       responses:
         '201':
           description: Course created successfully
@@ -115,7 +117,9 @@ paths:
                     properties:
                       id:
                         type: integer
-                      message:
+                      title:
+                        type: string
+                      description:
                         type: string
         '400':
           description: Bad request error
@@ -141,7 +145,9 @@ paths:
                       properties:
                         id:
                           type: integer
-                        message:
+                        title:
+                          type: string
+                        description:
                           type: string
   /courses/{id}:
     get:
@@ -168,7 +174,9 @@ paths:
                       id:
                         type: string
                         format: uuid
-                      message:
+                      title:
+                        type: string
+                      description:
                         type: string
         '404':
           description: Course not found
