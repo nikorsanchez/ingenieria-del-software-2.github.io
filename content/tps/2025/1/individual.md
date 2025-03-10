@@ -52,7 +52,7 @@ Luego de haber completado este formulario, les solicitaremos que agreguen al usu
 
 ## Enunciado
 
-Muchas gracias por tu interés en la posición de Founding Engineer en <NOMBRE DEL TP>. Estamos construyendo la próxima generación de plataformas de aprendizaje, y necesitamos mentes brillantes como la tuya para hacer realidad esta visión.
+Muchas gracias por tu interés en la posición de Founding Engineer en ClassConnect. Estamos construyendo la próxima generación de plataformas de aprendizaje, y necesitamos mentes brillantes como la tuya para hacer realidad esta visión.
 
 Tendrás diez días para completar esta prueba técnica. Si bien estimamos que el ejercicio debería tomarte entre 4-6 horas, entendemos que puedas tener otros compromisos, así que queremos darte flexibilidad para que puedas demostrar tu mejor trabajo.
 
@@ -64,7 +64,7 @@ Si tienes alguna duda sobre los requerimientos o el alcance del proyecto, no dud
 
 #### Publicación de cursos
 
-- **Descripción:** Como usuario de <NOMBRE DEL TP>, quiero poder crear y publicar cursos para que otros usuarios puedan aprender.
+- **Descripción:** Como usuario de ClassConnect, quiero poder crear y publicar cursos para que otros usuarios puedan aprender.
 
 - **Criterio de Aceptación:** El sistema debe permitir a los usuarios crear y publicar cursos que incluyan un nombre, una descripcion.
 
@@ -83,160 +83,10 @@ Si tienes alguna duda sobre los requerimientos o el alcance del proyecto, no dud
 2. **Endpoints a Implementar**:
     - Utiliza la siguiente especificación de OpenAPI para implementar los endpoints, que se puede visualizar en [Swagger Editor](https://editor.swagger.io/) para una vista más gráfica.
 
-   ```yaml
-    openapi: 3.0.0
-    info:
-      title: <NOMBRE DEL TP> Content Service API
-      version: 1.0.0
-    paths:
-      /courses:
-        post:
-          summary: Create a new course
-          requestBody:
-            required: true
-            content:
-              application/json:
-                schema:
-                  type: object
-                  properties:
-                    message:
-                      type: string
-          responses:
-            '201':
-              description: Course created successfully
-              content:
-                application/json:
-                  schema:
-                    type: object
-                    properties:
-                      data:
-                        type: object
-                        properties:
-                          id:
-                            type: integer
-                          title:
-                            type: string
-                          description:
-                            type: string
-            '400':
-              description: Bad request error
-              content:
-                application/json:
-                  schema:
-                    $ref: '#/components/schemas/ErrorResponse'
-            '500':
-              description: Internal server error
-              content:
-                application/json:
-                  schema:
-                    $ref: '#/components/schemas/ErrorResponse'
-        get:
-          summary: Retrieve all courses
-          responses:
-            '200':
-              description: A list of courses
-              content:
-                application/json:
-                  schema:
-                    type: object
-                    properties:
-                      data:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            id:
-                              type: integer
-                            title:
-                              type: string
-                            description:
-                              type: string
-            '500':
-              description: Internal server error
-              content:
-                application/json:
-                  schema:
-                    $ref: '#/components/schemas/ErrorResponse'
-    components:
-      schemas:
-        ErrorResponse:
-          type: object
-          properties:
-            type:
-              type: string
-            title:
-              type: string
-            status:
-              type: integer
-            detail:
-              type: string
-            instance:
-              type: string
-    ```
-   - Las respuestas de error deben seguir el RFC 7807 (**). Para este proyecto, por la complejidad, el campo `type` debe ser `about:blank`.
-
-3. **Persistencia de Datos**
-- Los datos deben persistir en memoria durante la ejecución del programa.
-- Para un manejo más eficiente y estructurado de la información, se recomienda utilizar una base de datos para el almacenamiento de los datos.
-
-4. **Requisitos de CI/CD y DevOps**
-
-    1. **Uso de Variables de Entorno:**
-
-      - **Entorno de desarrollo:** Utilizar variables de entorno para configurar parámetros básicos del servicio, como `HOST`, `PORT`, y `ENVIRONMENT`.
-      - **Persistencia:** Utilizar las variables relacionadas con la conexión a bases de datos (`DATABASE_HOST`, `DATABASE_PORT`, `DATABASE_USER`, `DATABASE_PASSWORD`) si se emplea una base de datos. Si no aplica, omitir estas variables.
-
-      - **Aclaraciones:**
-        - `ENVIRONMENT`: Define si el entorno es de desarrollo (`development`) o producción (`production`).
-        - `PORT`: Define el puerto en el que corre la aplicación, por defecto 8080.
-        - `HOST`: Define la IP donde el servicio escucha. `0.0.0.0` permite acceso desde cualquier red, por ejemplo, desde otro contenedor; `127.0.0.1` restringe a conexiones locales. La necesidad de definir `HOST` dependerá de la tecnología.
-
-    2. **Dockerfile:**
-      Crear un `Dockerfile` para el servicio siguiendo las [mejores prácticas](https://docs.docker.com/build/building/best-practices/#choose-the-right-base-image) para una imagen concisa y eficiente.
-
-
-### Requerimientos no funcionales
-
-- Usa cualquier lenguaje de programación para el servicio, preferiblemente las últimas versiones LTS.
-- El servicio debe ejecutarse en un contenedor de Docker.
-- El `Dockerfile` debe estar en la raíz del repositorio
-- Documenta funciones y clases siguiendo el estándar del lenguaje elegido.
-- Implementación de logs, utiliza una biblioteca externa de logging para facilitar la configuración.
-- Formatea el código con el formatter preferido del lenguaje.
-- El código debe estar escrito en inglés.
-- Los commits deben ser atómicos y descriptivos, para asegurar consistencia y legibilidad desde el inicio del proyecto.
-
-### Desafíos Opcionales
-
-1. **Longitud minima y maxima de la descripcion**:
-    - Requiere que el campo `description` tenga al menos 50 caracteres y como maximo 255 caracteres al crear un curso.
-    - Responde con código 400 si la validación falla.
-    - Agrega un test para este caso.
-2. **UUID para cursos**:
-    - Asegura que cada curso tenga un UUID.
-    - El servidor debe generar el UUID en la respuesta al momento de crearse un curso (`POST /courses`).
-    - Revisa la especificación de OpenAPI. (*)
-3. **GET /courses/{id}** y **DELETE /courses/{id}**:
-    - Recupera y elimina un curso por ID.
-    - Devuelve código 404 si el curso no se encuentra.
-    - Cada endpoint debe tener una prueba para el caso exitoso.
-    - Revisa la especificación de OpenAPI. (*)
-4. **Usar Middleware para Manejar Errores**:
-    - Implementa middleware para el manejo centralizado de errores.
-5. **Mejoras a la Solución**:
-    - ¿Hay espacio para mejorar tu solución? Por favor, elabora.
-6. **Uso de Docker Compose**:
-   - Agrega un archivo [compose.yaml](https://docs.docker.com/compose/compose-application-model/#the-compose-file) para definir los servicios.
-   - La base de datos y el contenedor de la aplicación deben estar definidos en `compose.yml`.
-   - El [servicio de Docker](https://docs.docker.com/compose/compose-file/05-services/#simple-example) debe apuntar al `Dockerfile` para la construcción del backend.
-
-
-Utiliza la siguiente especificación de OpenAPI, que incluye el parámetro de ruta `{id}`, el cual puede ser un UUID o un ID numérico según se requiera. (*)
-
 ```yaml
 openapi: 3.0.0
 info:
-  title: <NOMBRE DEL TP> Content Service API
+  title: ClassConnect Content Service API
   version: 1.0.0
 
 paths:
@@ -276,6 +126,27 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+    get:
+      summary: Retrieve all courses
+      responses:
+        '200':
+          description: A list of courses
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        title:
+                          type: string
+                        description:
+                          type: string
   /courses/{id}:
     get:
       summary: Retrieve a course by ID
@@ -360,6 +231,63 @@ components:
         instance:
           type: string
 ```
+   - Las respuestas de error deben seguir el RFC 7807 (**). Para este proyecto, por la complejidad, el campo `type` debe ser `about:blank`.
+
+3. **Persistencia de Datos**
+- Los datos deben persistir en memoria durante la ejecución del programa.
+- Para un manejo más eficiente y estructurado de la información, se recomienda utilizar una base de datos para el almacenamiento de los datos.
+
+4. **Requisitos de CI/CD y DevOps**
+
+    1. **Uso de Variables de Entorno:**
+
+      - **Entorno de desarrollo:** Utilizar variables de entorno para configurar parámetros básicos del servicio, como `HOST`, `PORT`, y `ENVIRONMENT`.
+      - **Persistencia:** Utilizar las variables relacionadas con la conexión a bases de datos (`DATABASE_HOST`, `DATABASE_PORT`, `DATABASE_USER`, `DATABASE_PASSWORD`) si se emplea una base de datos. Si no aplica, omitir estas variables.
+
+      - **Aclaraciones:**
+        - `ENVIRONMENT`: Define si el entorno es de desarrollo (`development`) o producción (`production`).
+        - `PORT`: Define el puerto en el que corre la aplicación, por defecto 8080.
+        - `HOST`: Define la IP donde el servicio escucha. `0.0.0.0` permite acceso desde cualquier red, por ejemplo, desde otro contenedor; `127.0.0.1` restringe a conexiones locales. La necesidad de definir `HOST` dependerá de la tecnología.
+
+    2. **Dockerfile:**
+      Crear un `Dockerfile` para el servicio siguiendo las [mejores prácticas](https://docs.docker.com/build/building/best-practices/#choose-the-right-base-image) para una imagen concisa y eficiente.
+
+
+### Requerimientos no funcionales
+
+- Usa cualquier lenguaje de programación para el servicio, preferiblemente las últimas versiones LTS.
+- El servicio debe ejecutarse en un contenedor de Docker.
+- El `Dockerfile` debe estar en la raíz del repositorio
+- Documenta funciones y clases siguiendo el estándar del lenguaje elegido.
+- Implementación de logs, utiliza una biblioteca externa de logging para facilitar la configuración.
+- Formatea el código con el formatter preferido del lenguaje.
+- El código debe estar escrito en inglés.
+- Los commits deben ser atómicos y descriptivos, para asegurar consistencia y legibilidad desde el inicio del proyecto.
+
+### Desafíos Opcionales
+
+1. **Longitud minima y maxima de la descripcion**:
+    - Requiere que el campo `description` tenga al menos 50 caracteres y como maximo 255 caracteres al crear un curso.
+    - Responde con código 400 si la validación falla.
+    - Agrega un test para este caso.
+2. **UUID para cursos**:
+    - Asegura que cada curso tenga un UUID.
+    - El servidor debe generar el UUID en la respuesta al momento de crearse un curso (`POST /courses`).
+    - Revisa la especificación de OpenAPI. (*)
+3. **GET /courses/{id}** y **DELETE /courses/{id}**:
+    - Recupera y elimina un curso por ID.
+    - Devuelve código 404 si el curso no se encuentra.
+    - Cada endpoint debe tener una prueba para el caso exitoso.
+    - Revisa la especificación de OpenAPI. (*)
+4. **Usar Middleware para Manejar Errores**:
+    - Implementa middleware para el manejo centralizado de errores.
+5. **Mejoras a la Solución**:
+    - ¿Hay espacio para mejorar tu solución? Por favor, elabora.
+6. **Uso de Docker Compose**:
+   - Agrega un archivo [compose.yaml](https://docs.docker.com/compose/compose-application-model/#the-compose-file) para definir los servicios.
+   - La base de datos y el contenedor de la aplicación deben estar definidos en `compose.yml`.
+   - El [servicio de Docker](https://docs.docker.com/compose/compose-file/05-services/#simple-example) debe apuntar al `Dockerfile` para la construcción del backend.
+
 ### Ejemplo de Respuesta de Error en Formato RFC 7807 (**)
 
 Ejemplo de una respuesta de error usando el formato RFC 7807:
