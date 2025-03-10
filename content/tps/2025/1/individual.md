@@ -115,9 +115,7 @@ paths:
                     properties:
                       id:
                         type: integer
-                      title:
-                        type: string
-                      description:
+                      message:
                         type: string
         '400':
           description: Bad request error
@@ -143,9 +141,7 @@ paths:
                       properties:
                         id:
                           type: integer
-                        title:
-                          type: string
-                        description:
+                        message:
                           type: string
   /courses/{id}:
     get:
@@ -172,9 +168,7 @@ paths:
                       id:
                         type: string
                         format: uuid
-                      title:
-                        type: string
-                      description:
+                      message:
                         type: string
         '404':
           description: Course not found
@@ -274,16 +268,11 @@ components:
     - Asegura que cada curso tenga un UUID.
     - El servidor debe generar el UUID en la respuesta al momento de crearse un curso (`POST /courses`).
     - Revisa la especificación de OpenAPI. (*)
-3. **GET /courses/{id}** y **DELETE /courses/{id}**:
-    - Recupera y elimina un curso por ID.
-    - Devuelve código 404 si el curso no se encuentra.
-    - Cada endpoint debe tener una prueba para el caso exitoso.
-    - Revisa la especificación de OpenAPI. (*)
-4. **Usar Middleware para Manejar Errores**:
+3. **Usar Middleware para Manejar Errores**:
     - Implementa middleware para el manejo centralizado de errores.
-5. **Mejoras a la Solución**:
+4. **Mejoras a la Solución**:
     - ¿Hay espacio para mejorar tu solución? Por favor, elabora.
-6. **Uso de Docker Compose**:
+5. **Uso de Docker Compose**:
    - Agrega un archivo [compose.yaml](https://docs.docker.com/compose/compose-application-model/#the-compose-file) para definir los servicios.
    - La base de datos y el contenedor de la aplicación deben estar definidos en `compose.yml`.
    - El [servicio de Docker](https://docs.docker.com/compose/compose-file/05-services/#simple-example) debe apuntar al `Dockerfile` para la construcción del backend.
