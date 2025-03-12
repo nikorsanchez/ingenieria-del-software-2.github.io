@@ -3,9 +3,6 @@ title: "Régimen de Aprobación"
 description: "Información sobre cómo aprobar la materia, TPs, parciales y finales."
 subtitle: Información sobre la materia
 ---
-### Inscripci&oacute;n
-
-Link de inscripci&oacute;n: [`https://forms.gle/f1C5CtT1vyqZfog76`](https://forms.gle/f1C5CtT1vyqZfog76)
 
 ### Docentes
 
@@ -13,8 +10,23 @@ Link de inscripci&oacute;n: [`https://forms.gle/f1C5CtT1vyqZfog76`](https://form
 
 ### Correlativas
 
-* 75.07 - Algoritmos y Programaci&oacute;n 3
-* 75.42 - Taller de Programaci&oacute;n 1
+#### TA049 - Ingeniería del Software II
+
+* Base de Datos,
+* Ingeniería de Software I
+* Taller de Programación
+
+#### 9521 - Métodos y modelos en la Ingeniería del Software II
+
+* Métodos y Modelos en la Ingeniería de Software I
+
+
+
+#### 7510 - Técnicas de Diseño
+
+* Análisis de la Información
+* Sistemas Operativos
+
 
 ### Objetivos
 
@@ -26,43 +38,44 @@ Los objetivos que persigue esta materia son los siguientes:
 * Reflexionar acerca de las habilidades blandas requeridas en el mercado laboral.
 * Ejercitar la capacidad de oratoria y presentaci&oacute;n.
 
-### Evaluaci&oacute;n
+# Evaluación  
 
-La materia contar&aacute; con las siguientes instancias de evaluaci&oacute;n, que deber&aacute;n ser apobadas por los alumnos:
+La materia cuenta con distintas etapas de evaluación, cada una con requisitos obligatorios.  
 
-* **Parcial**: instancia de evaluaci&oacute;n te&oacute;rica, donde se evaluar&aacute;n los conocimientos adquiridos en las clases te&oacute;ricas y mediante el material de lectura obligatorio; asimismo, se evaluar&aacute;n conceptos y herramientas utilizados en el desarrollo del trabajo pr&aacute;ctico.
+## Trabajo práctico individual  
+El curso comienza con un **trabajo práctico individual**, cuya aprobación es un requisito excluyente para continuar la cursada. La no entrega o desaprobación de este trabajo implicará la pérdida de la cursada.  
 
-  📅 **Fecha**: _A definir_
-  
-* **Trabajo Pr&aacute;ctico**: instancia de evaluaci&oacute;n pr&aacute;, quiz&aacute; la m&aacute;s importante del curso. Si bien se trata de una evaluaci&oaacute;n grupal, se considerar&aacute; tambi&eacute;n el desempe&ntilde;o de cada alumno en forma personal.
-  Adem&aacute;s de la entrega, los equipos deber&aacute;n cumplir con tres presentaciones intermedias obligatorias _(checkpoints)_. En todas las instancias de evaluaci&oacute;n se espera ciertos contenidos m&iacute;nimos y una defensa grupal / personal en forma presencial. La falla en dos oportunidades significar&aacute; la p&eacute;rdida de la materia.
-  
-  📅 **Checkpoint 1**: _A definir_
-  
-  📅 **Checkpoint 2**: _A definir_
-  
-  📅 **Checkpoint 3**: _A definir_
-  
-  📅 **Entrega final**: _A definir_
+## Trabajo práctico grupal  
+Una vez aprobado el trabajo individual, comienza el **trabajo grupal**, el cual se desarrolla en varias etapas de entrega. Cada etapa tendrá requisitos específicos establecidos por la cátedra y deberá cumplirse en su totalidad.  
+
+Cada entrega tiene un máximo de **dos intentos**. Si un grupo desaprueba ambos intentos de una misma entrega, perderá la cursada.  
+
+## Requisitos por checkpoint  
+
+### Check 0  
+- Diagrama inicial de arquitectura  
+- Definición de tecnologías a utilizar  
+- Selección y configuración de la herramienta de gestión de proyectos  
+
+### Check 1  
+- Backlog validado y comprometido  
+- Implementación de CI/CD, incluyendo despliegue automático, ejecución de pruebas y verificación de cobertura  
+- Prueba de integración end-to-end (E2E) básica entre la aplicación y el backend desplegados en la nube  
+
+### Check 2  
+- Backlog actualizado y comprometido  
+- Integración de herramientas de monitoreo  
+
+### Check 3  
+- Backlog actualizado y comprometido  
+
+### Entrega final  
+- Todas las historias obligatorias y opcionales solicitadas, finalizadas y verificadas  
+- Documentación completa  
+- Entregables definidos por la cátedra  
 
 
-### Contenido te&oacute;rico
 
-Se dictar&aacute;n siete clases te&oacute;ricas, los d&iacute;as lunes y jueves de 19 a 22hs:
-
-* Introducción a la materia
-* Introducción al desarrollo de servicios web
-* Introducción al desarrollo de aplicaciones mobile
-* Introducción a UX
-* Introducción a técnicas de testing
-* Introducción a programación web
-* Introducción a protocolos de autenticación y autorización
-* Introducción a contenedores
-
-
-Asimismo, los alumnos recibir&aacute;n material de lectura obligatoria que, junto con el restante contenido te&oacute;rico y pr&aacute;ctico, ser&aacute;n evaluados en las instancias correspondientes.
-
-Durante todo el cuatrimestre, los docentes estar&aacute;n a disposici&oacute;n para responder todas aquellas preguntas que le alumno proponga.
 
 ### Trabajo Pr&aacute;ctico
 
@@ -75,13 +88,6 @@ Durante todo el cuatrimestre, los docentes estar&aacute;n a disposici&oacute;n p
   * No participar en el desarrollo de un cierto m&oacute;dulo no exime a ning&uacute;n integrante del equipo de contar con los conocimientos b&aacute;sicos de una tecnolog&iacute;a (ej. al momento del parcial/final).
 * En cada una de las cuatro entregas se espera un m&iacute;nimo de funcionalidad, documentaci&oacute;n, pruebas, etc; estos requisitos ser&aacute;n claramente detallados, y su incumplimiento podr&iacute;a significar la p&iacute;rdida de la materia al segundo incumplimiento.
 
-### Recuperatorios
-
-* El parcial tendr&aacute; una fecha de recuperaci&oacute;n, acorde al reglamento de la facultad.
-
-  📅 **Recuperatorio del parcial**:  _A definir_
-  
-* Dadas las m&uacute;ltiples instancias de control que posee el trabajo pr&aacute;ctico, no se contempla una instancia de recuperaci&oacute;n luego de la entrega final. Para casos excepcionales, donde el docente considere conveniente solicitar cambios sobre la entrega final, el vencimiento ser&aacute; a las 18hs de la primera fecha de exposiciones orales.
 
 ### Método de comunicaci&oacute;n
 
@@ -103,6 +109,5 @@ En el sitio web se pondr&aacute; a disposici&oacute;n de los alumnos:
 
 * La c&aacute;tedra se reserva el derecho de realizar cambios sin previo aviso (fechas, docentes, alcance del trabajo pr&aacute;ctico, metodolog&iacute;a, etc.).
 * Es posible que, a fin de favorecer las exposiciones orales, las clases de exposici&oacute;n sean de mayor duraci&oacute;n (a confirmar).
-* La firma de libretas se llevar&aacute; a cabo en fechas/horarios/aulas a convenir, previa inscripci&oacute;n a alguna fecha de coloquio (para estar inscripto en alguna acta).
 * La participaci&oacute;n de los alumnos ser&aacute; considerada al momento de las calificaciones.
 * Todas las entregas de trabajos individuales o grupales deben ser de creaci&oacute;n propia, sin excepci&oacute;n.
