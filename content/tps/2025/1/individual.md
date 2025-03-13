@@ -98,12 +98,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                title:
-                    type: string
-                description:
-                    type: string
+              $ref: '#/components/schemas/CreateCourseRequest'
       responses:
         '201':
           description: Course created successfully
@@ -113,14 +108,7 @@ paths:
                 type: object
                 properties:
                   data:
-                    type: object
-                    properties:
-                      id:
-                        type: integer
-                      title:
-                        type: string
-                      description:
-                        type: string
+                    $ref: '#/components/schemas/Course'
         '400':
           description: Bad request error
           content:
@@ -141,14 +129,8 @@ paths:
                   data:
                     type: array
                     items:
-                      type: object
-                      properties:
-                        id:
-                          type: integer
-                        title:
-                          type: string
-                        description:
-                          type: string
+                      $ref: '#/components/schemas/Course'
+
   /courses/{id}:
     get:
       summary: Retrieve a course by ID
@@ -157,9 +139,7 @@ paths:
           name: id
           required: true
           schema:
-            type: string
-            format: uuid
-          example: "123e4567-e89b-12d3-a456-426614174000"
+            type: integer
       responses:
         '200':
           description: Course retrieved successfully
@@ -169,15 +149,7 @@ paths:
                 type: object
                 properties:
                   data:
-                    type: object
-                    properties:
-                      id:
-                        type: string
-                        format: uuid
-                      title:
-                        type: string
-                      description:
-                        type: string
+                    $ref: '#/components/schemas/Course'
         '404':
           description: Course not found
           content:
@@ -198,12 +170,10 @@ paths:
           name: id
           required: true
           schema:
-            type: string
-            format: uuid
-          example: "123e4567-e89b-12d3-a456-426614174000"
+            type: integer
       responses:
         '204':
-              description: Course deleted successfully
+          description: Course deleted successfully
         '404':
           description: Course not found
           content:
@@ -219,6 +189,24 @@ paths:
 
 components:
   schemas:
+    Course:
+      type: object
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        description:
+          type: string
+
+    CreateCourseRequest:
+      type: object
+      properties:
+        title:
+          type: string
+        description:
+          type: string
+
     ErrorResponse:
       type: object
       properties:
@@ -232,6 +220,7 @@ components:
           type: string
         instance:
           type: string
+
 ```
    - Las respuestas de error deben seguir el RFC 7807 (**). Para este proyecto, por la complejidad, el campo `type` debe ser `about:blank`.
 
@@ -244,7 +233,7 @@ components:
     1. **Uso de Variables de Entorno:**
 
       - **Entorno de desarrollo:** Utilizar variables de entorno para configurar parámetros básicos del servicio, como `HOST`, `PORT`, y `ENVIRONMENT`.
-      - **Persistencia:** Utilizar las variables relacionadas con la conexión a bases de datos (`DATABASE_HOST`, `DATABASE_PORT`, `DATABASE_USER`, `DATABASE_PASSWORD`) si se emplea una base de datos. Si no aplica, omitir estas variables.
+      - **Persistencia:** Utilizar las variables relacionadas con la conexión a bases de datos (`DATABASE_HOST`, `DATABASE_NAME`, `DATABASE_PORT`, `DATABASE_USER`, `DATABASE_PASSWORD`) si se emplea una base de datos. Si no aplica, omitir estas variables.
 
       - **Aclaraciones:**
         - `ENVIRONMENT`: Define si el entorno es de desarrollo (`development`) o producción (`production`).
@@ -273,9 +262,9 @@ components:
     - Responde con código 400 si la validación falla.
     - Agrega un test para este caso.
 2. **UUID para cursos**:
-    - Asegura que cada curso tenga un UUID.
-    - El servidor debe generar el UUID en la respuesta al momento de crearse un curso (`POST /courses`).
-    - Revisa la especificación de OpenAPI. (*)
+    - Asegura que cada curso tenga un UUID v4.
+    - El servidor debe generar el UUID para un curso al momento de su creación, como respuesta de (`POST /courses`).
+    - El contrato REST debe utilizar el UUID en lugar del ID numérico.
 3. **Usar Middleware para Manejar Errores**:
     - Implementa middleware para el manejo centralizado de errores.
 4. **Mejoras a la Solución**:
