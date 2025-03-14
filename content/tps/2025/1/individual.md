@@ -263,8 +263,9 @@ components:
     - Agrega un test para este caso.
 2. **UUID para cursos**:
     - Asegura que cada curso tenga un UUID v4.
-    - El servidor debe generar el UUID para un curso al momento de su creación, como respuesta de (`POST /courses`).
-    - El contrato REST debe utilizar el UUID en lugar del ID numérico.
+    - El servidor debe generar automáticamente el UUID al momento de la creación de un curso, como respuesta de (`POST /courses`).
+    - El UUID debe manejarse internamente con la API o biblioteca nativa del lenguaje como un identificador de 128 bits.
+    - En el contrato REST, el UUID V4 debe representarse como un `string` en [formato estándar](https://datatracker.ietf.org/doc/html/rfc9562#section-4-5) y debe usarse como identificador en todas las operaciones en lugar del ID numérico.
 3. **Usar Middleware para Manejar Errores**:
     - Implementa middleware para el manejo centralizado de errores.
 4. **Mejoras a la Solución**:
@@ -319,3 +320,4 @@ docker run --name db-container --network <courses-network-name> -p 3306:3306 \
 -   [Docker Documentation](https://docs.docker.com/reference/dockerfile/)
 -   [Conventional Commits](https://gist.github.com/qoomon/5dfcdf8eec66a051ecd85625518cfd13#types)
 - [The Twelve-Factor App](https://12factor.net/es/)
+- [UUID RFC](https://datatracker.ietf.org/doc/html/rfc9562#name-uuid-format)
