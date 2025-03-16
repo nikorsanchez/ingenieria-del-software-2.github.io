@@ -225,8 +225,8 @@ components:
    - Las respuestas de error deben seguir el RFC 7807 (**). Para este proyecto, por la complejidad, el campo `type` debe ser `about:blank`.
 
 3. **Persistencia de Datos**
-- Los datos deben persistir en memoria durante la ejecución del programa.
-- Para un manejo más eficiente y estructurado de la información, se recomienda utilizar una base de datos para el almacenamiento de los datos.
+- Los datos deben persistir durante la ejecución del programa; mantenerlo en memoria es suficiente dentro del scope solicitado.
+- Si se cuenta con el conocimiento para implementarlo, se recomienda persistir los datos en una base de datos para un manejo más estructurado.
 
 4. **Requisitos de CI/CD y DevOps**
 
