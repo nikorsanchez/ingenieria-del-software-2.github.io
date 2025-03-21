@@ -52,7 +52,7 @@ A continuación se describirán una serie de Épicas e Historias de usuario indi
 
 _En caso de que se observe alguna definición ambigua o la falta de la misma, esta debe ser aclarada y definida por el grupo junto a su corrector_ 
 
-### [Épicas](épicas)
+### [Épicas](#épicas)
 
 #### [Usuarios](#usuarios)
 
