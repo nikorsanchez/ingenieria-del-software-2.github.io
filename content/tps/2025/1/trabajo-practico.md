@@ -11,7 +11,7 @@ subtitle: "Grupal"
 1. [Descripción](#descripción)
 2. [Condiciones de aprobación](#condiciones-de-aprobación)
 3. [Requisitos](#requisitos)
-   1. [Épicas](#Épicas)
+   1. [Épicas](#épicas)
       1. [Usuarios](#usuarios)
       2. [Gestión de perfiles](#gestión-de-perfiles)
       3. [Gestión de Clases](#gestión-de-clases)
@@ -52,7 +52,7 @@ A continuación se describirán una serie de Épicas e Historias de usuario indi
 
 _En caso de que se observe alguna definición ambigua o la falta de la misma, esta debe ser aclarada y definida por el grupo junto a su corrector_ 
 
-### Épicas
+### [Épicas](épicas)
 
 #### [Usuarios](#usuarios)
 
@@ -599,7 +599,7 @@ ___
 ___
 
 
-#### Feedback al curso
+#### Feedback de cursos
 
 **Descripción**
 
@@ -622,7 +622,7 @@ ___
 ___
 
 
-#### Feedback al alumno
+#### Feedback de alumnos
 
 **Descripción**
 
@@ -1395,12 +1395,12 @@ ___
 ## Instancias de entrega
 
 | Instancia   |      Fecha      |  Alcance |
-|----------|:-------------:|------:|
-| Checkpoint 1 |  A definir | A definir |
-| Checkpoint 2 |  A definir | A definir |
-| Checkpoint 3 |  A definir | A definir |
-| Checkpoint 4 |  A definir  | A definir |
-| Entrega Final | A definir | A definir |
+|:----------|:-------------:|:------|
+| Checkpoint 1 |  31/3 | Diagrama inicial de arquitectur, Tecnologías definidas, Herramienta de gestión definida.|
+| Checkpoint 2 |  14/4 | Backlog comprometido, CI/CD (deploy y ejecución de tests junto con comprobación de coverage), e2e básico entre app y backend corriendo en cloud|
+| Checkpoint 3 |  12/5 | Backlog comprometido, Herramientas de monitoreo integradas |
+| Checkpoint 4 |  5/6  | Backlog comprometido |
+| Entrega Final | 26/6 | App completa con requeridas y optativas, Documentación completa|
     
 ___
 
