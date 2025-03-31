@@ -354,7 +354,7 @@ ___
 
 **Descripción**
 
-- Como Usuario, quiero poder visualizar los datos de otros usuarios para conocer su información de contacto y detalles públicos, de modo que pueda decidir si interactúo o me conecto con ellos en la plataforma.
+- Como Usuario, quiero poder visualizar los datos de otros usuarios para conocer su información de contacto y detalles públicos.
 
 **Criterios de aceptación**
 
