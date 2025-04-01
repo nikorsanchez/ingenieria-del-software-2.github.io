@@ -1407,4 +1407,31 @@ ___
 ## Historias obligatorias y optativas
 
 
-Las historias obligatorias y optativas se encuentran definidas [TODO](TODO)
+Las historias obligatorias y optativas se encuentran definidas 
+
+### Historias obligatorias
+
+| Epic                          | Required User stories                                       | Observaciones |
+|------------------------------|------------------------------------------------------------|--------------|
+| **Usuarios**                 | Registro de usuarios                                       |              |
+|                              | Login de usuarios con email y contraseña                  |              |
+|                              | Login de usuarios con proveedores de identidad federada   |              |
+|                              | Registro Administradores                                   |              |
+|                              | Login de administradores                                  |              |
+| **Gestión de Perfiles**      | Edición de perfil                                         |              |
+|                              | Visualización de perfil propio                            |              |
+|                              | Visualización de perfil de otros usuarios                 |              |
+| **Gestión de Clases**        | Creación y gestión de cursos                              |              |
+|                              | Listado e inscripción a cursos                            |              |
+|                              | Inscripción de estudiantes                                |              |
+|                              | Organización de módulos y recursos                        |              |
+|                              | Visualización de cursos                                   |              |
+| **Asignaciones y Evaluaciones** | Creación de tareas y exámenes                      |              |
+|                              | Completar tarea/rendir examen                             |              |
+|                              | Listado de tareas/exámenes (docente)                     |              |
+|                              | Listado de tareas/exámenes (alumno)                      |              |
+|                              | Retroalimentación y notas                                | En esta US el CA 4: Generación de resumen de retroalimentación por IA es optativo |
+| **Comunicación y Notificaciones** | Notificaciones push y email                      |              |
+| **Métricas y Análisis**      | Estadísticas de desempeño estudiantil                     |              |
+| **Administración de la Plataforma** | Gestión de usuarios y permisos               |              |
+
