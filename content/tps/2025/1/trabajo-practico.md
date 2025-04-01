@@ -1438,5 +1438,5 @@ Las historias obligatorias y optativas se encuentran definidas
 
 ### Optativas
 
-| Epic                          | Required User stories                                       | Observaciones |
+| Epic                          | User stories                                       | Observaciones |
 |------------------------------|------------------------------------------------------------|--------------|
