@@ -33,8 +33,8 @@ subtitle: "Grupal"
     10. [UX](#ux)
     11. [Documentación](#documentación)
 5. [Instancias de entrega](#instancias-de-entrega)
-6. [Historias requeridas y optativas](#historias-requeridas-y-optativas)
-    1. [Requeridas](#requeridas)
+6. [Historias obligatorias y optativas](#historias-obligatorias-y-optativas)
+    1. [Obligatorias](#obligatorias)
     2. [Optativas](#optativas)
 7. [Material de referencia](#material-de-referencia)
 
@@ -1409,7 +1409,7 @@ ___
 
 Las historias obligatorias y optativas se encuentran definidas 
 
-### Historias obligatorias
+### Obligatorias
 
 | Epic                          | Required User stories                                       | Observaciones |
 |------------------------------|------------------------------------------------------------|--------------|
@@ -1435,3 +1435,8 @@ Las historias obligatorias y optativas se encuentran definidas
 | **Métricas y Análisis**      | Estadísticas de desempeño estudiantil                     |              |
 | **Administración de la Plataforma** | Gestión de usuarios y permisos               |              |
 
+
+### Optativas
+
+| Epic                          | Required User stories                                       | Observaciones |
+|------------------------------|------------------------------------------------------------|--------------|
