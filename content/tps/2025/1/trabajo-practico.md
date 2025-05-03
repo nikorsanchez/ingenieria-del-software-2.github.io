@@ -1438,5 +1438,33 @@ Las historias obligatorias y optativas se encuentran definidas
 
 ### Optativas
 
-| Epic                          | User stories                                       | Observaciones |
-|------------------------------|------------------------------------------------------------|--------------|
+| Epic                           | Optional User stories                                     | Points |
+|--------------------------------|-----------------------------------------------------------|------------------------------|
+| **Usuarios**                   | Login con datos biométricos                               | 3                            |
+|                                | Recupero de contraseña                                    | 2                            |
+|                                | Notificación de PIN en proceso de registro                | 3                            |
+| **Gestión de Clases**          | Docentes auxiliares                                       | 5                            |
+|                                | Cursos favoritos                                          | 2                            |
+|                                | Visualización de cursos favoritos                         | 2                            |
+|                                | Feedback de cursos                                        | 3                            |
+|                                | Feedback de alumnos                                       | 3                            |
+|                                | Visualización de feedbacks como alumno                    | 3                            |
+|                                | Visualización de feedbacks del curso                      | 3                            |
+| **Asignaciones y Evaluaciones**| Corrección automática con IA                              | 8                            |
+|                                | Retroalimentación y notas                                 | 5                            |
+| **Comunicación y Notificaciones**| Foro de preguntas y respuestas                         | 5                            |
+|                                | Chat de asistencia                                        | 8                            |
+| **Métricas y Análisis**        | Análisis de tendencias de aprendizaje                     | 8                            |
+|                                | Detección de plagio con IA                                | 8                            |
+| **Administración de la Plataforma** | Configuración de reglas y normativas             | 5                            |
+|                                | Monitoreo de actividad y rendimiento                      | 5                            |
+| **Miscelaneo**                 | Uso de queues para métricas                               | 8                            |
+|                                | Uso de k8s                                                | 8                            |
+|                                | **Total**                                                 | **97**                       |
+
+
+| Grupo       | Puntos a Pedir |
+|-------------|----------------|
+| Grupo de 6  | 60             |
+| Grupo de 5  | 50             |
+| Grupo de 4  | 40             |
