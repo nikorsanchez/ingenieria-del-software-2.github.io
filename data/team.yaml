@@ -58,3 +58,8 @@ team:
     pic: "/images/professors/juani.png"
     mail: "jperezd@fi.uba.ar"
     github: "JuaniFIUBA"
+
+  - name: Juan Ignacio Giacobbe
+    pic: "/images/professors/juan.jpeg"
+    mail: "jgiacobbed@fi.uba.ar"
+    github: "juanignaciogiacobbe"
