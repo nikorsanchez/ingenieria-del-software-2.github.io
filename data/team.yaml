@@ -58,3 +58,8 @@ team:
     pic: "/images/professors/juani.png"
     mail: "jperezd@fi.uba.ar"
     github: "JuaniFIUBA"
+
+  - name: Iara Elizabeth Jolodovsky
+    pic: "/images/professors/iara.jpg"
+    mail: "ijolodovsky@fi.uba.ar"
+    github: "ijolodovsky"
