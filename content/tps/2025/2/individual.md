@@ -11,6 +11,8 @@ La resolución del presente proyecto es individual. Leer la totalidad del enunci
 
 La entrega del proyecto se realizará mediante un repositorio privado en GitHub. Cada candidato deberá crear su propio repositorio y agregar a su corrector como colaborador para que pueda ser evaluado. Se recomienda iniciar tempranamente y hacer commits pequeños que agreguen funcionalidad incrementalmente. No se evaluará ningún commit realizado luego de la fecha y hora límite de entrega.
 
+⚠️ **Aviso importante:** Ante alguna sospecha en la corrección, el docente podrá solicitar una defensa oral del trabajo práctico mediante reunión virtual (Google Meet u otra herramienta similar).
+
 El repositorio debe incluir un archivo `README.md` (en español) con:
 
 -   Una tabla de contenido.
@@ -44,6 +46,7 @@ Luego de haber completado este formulario, les solicitaremos que agreguen al usu
 | Dockerfile                | Creación adecuada del Dockerfile con las mejores prácticas.                         |
 | Configuración del Entorno | Uso de variables de entorno para configuraciones, sin codificar ningún valor.       |
 | Manejo de Errores         | Manejo correcto y estandarizado de errores usando RFC 7807.                         |
+| Persistencia              | Obligatoria en base de datos (relacional o no). Modelado adecuado.                  |
 | Desafíos (si los hay)     | Implementación exitosa de cualquier desafío opcional.                               |
 | Documentación             | README claro y conciso con todas las secciones requeridas.                          |
 | Proceso de Pensamiento    | Explicación de decisiones y proceso de pensamiento a lo largo de la implementación. |
@@ -51,23 +54,31 @@ Luego de haber completado este formulario, les solicitaremos que agreguen al usu
 
 ## Enunciado
 
-En este trabajo práctico individual desarrollarás un servicio backend para una plataforma de descrubrimiento y reproducción musical llamada *Melodía*.
-
-El objetivo es diseñar e implementar una API RESTful que permita crear, almacenar y consultar playlists con sus canciones, siguiendo las especificaciones detalladas a continuación.
+En este trabajo práctico individual desarrollarás un servicio backend para *Melodía*, una plataforma de descubrimiento y reproducción musical. La API debe gestionar playlists y canciones, incluyendo el ciclo de vida de Canción y su vinculación con Playlist. La persistencia debe ser en una base de datos (relacional o no relacional).
 
 Se recomienda organizar el trabajo en commits pequeños y frecuentes, y asegurar la calidad mediante pruebas automatizadas.
 
 ### Historias de Usuario
 
+#### Gestión de canciones
+
+- **Descripción:** Como usuario de Melodía, quiero poder gestionar canciones (crear, consultar, actualizar y eliminar) para tener un catálogo disponible que pueda usar en mis playlists.
+- **Criterio de Aceptación:** El sistema debe permitir operaciones CRUD sobre canciones, donde cada canción tiene un título y un artista.
+
 #### Publicación de playlists  
 
 - **Descripción:** Como usuario de Melodía, quiero poder crear y publicar playlists para que otros usuarios puedan escucharlas.  
-- **Criterio de Aceptación:** El sistema debe permitir a los usuarios crear y publicar playlists que incluyan un nombre, una descripción y una lista de canciones (cada canción con título y artista).  
+- **Criterio de Aceptación:** El sistema debe permitir a los usuarios crear y publicar playlists que incluyan un nombre, una descripción y una lista de canciones vinculadas desde el catálogo existente. 
+
+#### Agregar canciones a playlists
+
+- **Descripción:** Como usuario, quiero poder agregar canciones existentes a mis playlists manteniendo un registro de cuándo las agregué. 
+- **Criterio de Aceptación:** El sistema debe permitir agregar canciones a playlists y registrar automáticamente la fecha y hora de agregado para cada canción en la playlist.
 
 #### Visualizar playlists  
 
 - **Descripción:** Como usuario, quiero tener acceso a todas las playlists publicadas en la plataforma.  
-- **Criterio de Aceptación:** Cuando ingrese a la lista de playlists, se deben mostrar todas las playlists publicadas en orden cronológico inverso, incluyendo sus canciones.  
+- **Criterio de Aceptación:** Cuando ingrese a la lista de playlists, se deben mostrar todas las playlists publicadas en orden cronológico inverso. Las canciones dentro de cada playlist deben estar ordenadas por fecha de agregado (más recientes primero).
 
 ### Requisitos
 
@@ -85,6 +96,128 @@ info:
   version: 1.0.0
 
 paths:
+  /songs:
+    post:
+      summary: Create a new song
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateSongRequest'
+      responses:
+        '201':
+          description: Song created successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: '#/components/schemas/Song'
+        '400':
+          description: Bad request error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    
+    get:
+      summary: Retrieve all songs
+      responses:
+        '200':
+          description: A list of songs
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Song'
+
+  /songs/{id}:
+    get:
+      summary: Retrieve a song by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Song retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: '#/components/schemas/Song'
+        '404':
+          description: Song not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+    put:
+      summary: Update a song by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateSongRequest'
+      responses:
+        '200':
+          description: Song updated successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: '#/components/schemas/Song'
+        '400':
+          description: Bad request error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Song not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+    delete:
+      summary: Delete a song by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: Song deleted successfully
+        '404':
+          description: Song not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
   /playlists:
     post:
       summary: Create a new playlist
@@ -115,7 +248,7 @@ paths:
       summary: Retrieve all playlists
       responses:
         '200':
-          description: A list of playlists
+          description: A list of playlists with songs ordered by addition date (most recent first)
           content:
             application/json:
               schema:
@@ -137,7 +270,7 @@ paths:
             type: integer
       responses:
         '200':
-          description: Playlist retrieved successfully
+          description: Playlist retrieved successfully with songs ordered by addition date (most recent first)
           content:
             application/json:
               schema:
@@ -170,8 +303,89 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
+  /playlists/{id}/songs:
+    post:
+      summary: Add a song to a playlist
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddSongToPlaylistRequest'
+      responses:
+        '200':
+          description: Song added to playlist successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: '#/components/schemas/Playlist'
+        '400':
+          description: Bad request error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Playlist or song not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
 components:
   schemas:
+    Song:
+      type: object
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        artist:
+          type: string
+
+    CreateSongRequest:
+      type: object
+      required:
+        - title
+        - artist
+      properties:
+        title:
+          type: string
+        artist:
+          type: string
+
+    UpdateSongRequest:
+      type: object
+      properties:
+        title:
+          type: string
+        artist:
+          type: string
+
+    PlaylistSong:
+      type: object
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        artist:
+          type: string
+        addedAt:
+          type: string
+          format: date-time
+          description: Timestamp when the song was added to the playlist
+
     Playlist:
       type: object
       properties:
@@ -184,27 +398,27 @@ components:
         songs:
           type: array
           items:
-            $ref: '#/components/schemas/Song'
+            $ref: '#/components/schemas/PlaylistSong'
+          description: Songs ordered by addition date (most recent first)
 
     CreatePlaylistRequest:
       type: object
+      required:
+        - name
+        - description
       properties:
         name:
           type: string
         description:
           type: string
-        songs:
-          type: array
-          items:
-            $ref: '#/components/schemas/Song'
 
-    Song:
+    AddSongToPlaylistRequest:
       type: object
+      required:
+        - songId
       properties:
-        title:
-          type: string
-        artist:
-          type: string
+        songId:
+          type: integer
 
     ErrorResponse:
       type: object
@@ -224,8 +438,7 @@ components:
    - Las respuestas de error deben seguir el RFC 7807 (**). Para este proyecto, por la complejidad, el campo `type` debe ser `about:blank`.
 
 3. **Persistencia de Datos**
-- Los datos deben persistir durante la ejecución del programa; mantenerlo en memoria es suficiente dentro del scope solicitado.
-- Si se cuenta con el conocimiento para implementarlo, se recomienda persistir los datos en una base de datos para un manejo más estructurado.
+- La persistencia en base de datos es obligatoria (relacional o no relacional). Se debe implementar un modelado adecuado.
 
 4. **Requisitos de CI/CD y DevOps**
 
