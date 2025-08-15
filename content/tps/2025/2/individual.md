@@ -7,11 +7,16 @@ subtitle: "Individual"
 
 ### Entrega
 
-La resolución del presente proyecto es individual. Leer la totalidad del enunciado antes de comenzar con el desarrollo de la solución
+Gracias por tu interés en unirte a Melodia como Software Engineer.
+Estamos construyendo la próxima gran experiencia de streaming musical: intuitiva, envolvente y diseñada para que cada usuario descubra su nueva canción favorita en segundos. Queremos que formar parte de Melodia se sienta como diseñar el futuro de la música… porque eso es exactamente lo que harás.
+
+Tendrás 10 días para completar esta prueba técnica. Calculamos que llevará unas 4–6 horas, pero te damos total flexibilidad para que puedas lucir lo mejor de tu talento.
+
+Si surge cualquier pregunta sobre los requerimientos o el alcance, escríbenos: estamos aquí para que brilles y disfrutes el proceso tanto como los usuarios disfrutan su música.
 
 La entrega del proyecto se realizará mediante un repositorio privado en GitHub. Cada candidato deberá crear su propio repositorio y agregar a su corrector como colaborador para que pueda ser evaluado. Se recomienda iniciar tempranamente y hacer commits pequeños que agreguen funcionalidad incrementalmente. No se evaluará ningún commit realizado luego de la fecha y hora límite de entrega.
 
-⚠️ **Aviso importante:** Ante alguna sospecha en la corrección, el docente podrá solicitar una defensa oral del trabajo práctico mediante reunión virtual (Google Meet u otra herramienta similar).
+⚠️ **Aviso importante:** Si durante la revisión de tu entrega surge alguna duda o inconsistencia, el equipo podrá solicitar una breve defensa oral a través de una reunión virtual (Google Meet u otra plataforma similar).
 
 El repositorio debe incluir un archivo `README.md` (en español) con:
 
@@ -63,7 +68,7 @@ Se recomienda organizar el trabajo en commits pequeños y frecuentes, y asegurar
 #### Gestión de canciones
 
 - **Descripción:** Como usuario de Melodía, quiero poder gestionar canciones (crear, consultar, actualizar y eliminar) para tener un catálogo disponible que pueda usar en mis playlists.
-- **Criterio de Aceptación:** El sistema debe permitir operaciones CRUD sobre canciones, donde cada canción tiene un título y un artista.
+- **Criterio de Aceptación:** El sistema debe permitir agregar nuevas canciones, ver su información, modificarlas y eliminarlas. Cada canción debe incluir un título y un artista.
 
 #### Publicación de playlists  
 
@@ -78,12 +83,12 @@ Se recomienda organizar el trabajo en commits pequeños y frecuentes, y asegurar
 #### Visualizar playlists  
 
 - **Descripción:** Como usuario, quiero tener acceso a todas las playlists publicadas en la plataforma.  
-- **Criterio de Aceptación:** Cuando ingrese a la lista de playlists, se deben mostrar todas las playlists publicadas en orden cronológico inverso. Las canciones dentro de cada playlist deben estar ordenadas por fecha de agregado (más recientes primero).
+- **Criterio de Aceptación:** Cuando ingrese a la lista de playlists, se deben mostrar todas las playlists en orden cronológico inverso según fecha y hora de publicación. Las canciones dentro de cada playlist deben estar ordenadas por fecha de agregado (más recientes primero).
 
 ### Requisitos
 
 1. **Especificaciones del Servicio Backend**:
-    - El servicio debe ser una API RESTful y devolver datos en formato JSON.
+    - El servicio debe ser una API REST-like y devolver datos en formato JSON.
     - Asegurate de probar cada endpoint con al menos una prueba E2E (End to End) o de integración, de manera que las pruebas sean claras y descriptivas en su propósito.
 
 2. **Endpoints a Implementar**:
@@ -245,7 +250,8 @@ paths:
                 $ref: '#/components/schemas/ErrorResponse'
 
     get:
-      summary: Retrieve all playlists
+      summary: Retrieve published playlists (most recent first)
+      description: Returns playlists ordered by publishedAt (desc). In the base spec, playlists are created already published.
       responses:
         '200':
           description: A list of playlists with songs ordered by addition date (most recent first)
@@ -270,7 +276,7 @@ paths:
             type: integer
       responses:
         '200':
-          description: Playlist retrieved successfully with songs ordered by addition date (most recent first)
+          description: A list of published playlists ordered by publishedAt desc, with songs ordered by addedAt desc
           content:
             application/json:
               schema:
@@ -395,6 +401,13 @@ components:
           type: string
         description:
           type: string
+        isPublished:
+          type: boolean
+          description: Playlist visibility flag. In the base spec, playlists are created as published.
+        publishedAt:
+          type: string
+          format: date-time
+          description: Timestamp when the playlist became published. In the base spec, equals creation time.
         songs:
           type: array
           items:
@@ -445,7 +458,7 @@ components:
     1. **Uso de Variables de Entorno:**
 
       - **Entorno de desarrollo:** Utilizar variables de entorno para configurar parámetros básicos del servicio, como `HOST`, `PORT`, y `ENVIRONMENT`.
-      - **Persistencia:** Utilizar las variables relacionadas con la conexión a bases de datos (`DATABASE_HOST`, `DATABASE_NAME`, `DATABASE_PORT`, `DATABASE_USER`, `DATABASE_PASSWORD`) si se emplea una base de datos. Si no aplica, omitir estas variables.
+      - **Persistencia:** Utilizar las variables relacionadas con la conexión a bases de datos (`DATABASE_HOST`, `DATABASE_NAME`, `DATABASE_PORT`, `DATABASE_USER`, `DATABASE_PASSWORD`).
 
       - **Aclaraciones:**
         - `ENVIRONMENT`: Define si el entorno es de desarrollo (`development`) o producción (`production`).
@@ -490,6 +503,115 @@ components:
   - Configurar un workflow de GitHub Actions que, en cada push o pull request a la rama main, ejecute los tests del proyecto automáticamente.
   - El workflow debe instalar dependencias, levantar el entorno necesario (ej. base de datos en Docker si aplica) y ejecutar los tests.
   - Documentar en el README.md cómo funciona y cómo se podría adaptar para producción.
+7. **Publicación diferida de playlists**:
+  - Objetivo: incorporar un **flujo de publicación** donde una playlist recién creada **no** queda visible hasta que el usuario la publique.
+  - API mínima: 
+    - Agregar un endpoint para **publicar** una playlist: `POST /playlists/{id}/publish` (idempotente).
+    - Agregar un **filtro** en el listado: `GET /playlists?published=true` (por defecto muestra solo las publicadas; con `published=false` puede devolver todas para backoffice/tests).
+    - El listado de playlists visibles debe mostrar **primero las más recientes**.
+  - Tests sugeridos: publicar una playlist que estaba no visible, idempotencia del endpoint y verificación del filtro en el listado.
+
+#### Contrato aditivo para el Desafío Opcional (7)
+```yaml
+openapi: 3.0.0
+info:
+  title: Melodia Playlist Service API (optional publish)
+  version: 1.1.0-optional-publish
+paths:
+  /playlists:
+    get:
+      summary: Retrieve playlists (filter by published)
+      description: By default returns only published playlists ordered by publishedAt desc.
+      parameters:
+        - in: query
+          name: published
+          required: false
+          schema:
+            type: boolean
+            default: true
+          description: If true (default), only published playlists are returned. If false, returns all playlists.
+        - in: query
+          name: sort
+          required: false
+          schema:
+            type: string
+            default: -publishedAt
+          description: Sort expression (e.g., -publishedAt).
+      responses:
+        '200':
+          description: A list of playlists
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Playlist'
+
+  /playlists/{id}/publish:
+    post:
+      summary: Publish a playlist (idempotent)
+      description: Sets isPublished=true and publishedAt=now() if not already published.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Playlist published
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: '#/components/schemas/Playlist'
+        '404':
+          description: Playlist not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+components:
+  schemas:
+    Playlist:
+      type: object
+      properties:
+        id: { type: integer }
+        name: { type: string }
+        description: { type: string }
+        isPublished: { type: boolean }
+        publishedAt:
+          type: string
+          format: date-time
+        songs:
+          type: array
+          items:
+            $ref: '#/components/schemas/PlaylistSong'
+    PlaylistSong:
+      type: object
+      properties:
+        id: { type: integer }
+        title: { type: string }
+        artist: { type: string }
+        addedAt:
+          type: string
+          format: date-time
+          description: Timestamp when the song was added to the playlist
+    ErrorResponse:
+      type: object
+      properties:
+        type: { type: string }
+        title: { type: string }
+        status: { type: integer }
+        detail: { type: string }
+        instance: { type: string }
+```
 
 ### Ejemplo de Respuesta de Error en Formato RFC 7807 (**)
 
