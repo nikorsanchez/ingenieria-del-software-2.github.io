@@ -63,3 +63,8 @@ team:
     pic: "/images/professors/iara.jpg"
     mail: "ijolodovsky@fi.uba.ar"
     github: "ijolodovsky"
+
+  - name: Maximo Utrera
+    pic: "/images/professors/maxo.jpg"
+    mail: "mutrera@fi.uba.ar"
+    github: "maxogod"
