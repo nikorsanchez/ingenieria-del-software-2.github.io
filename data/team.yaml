@@ -68,3 +68,8 @@ team:
     pic: "/images/professors/maxo.jpg"
     mail: "mutrera@fi.uba.ar"
     github: "maxogod"
+
+  - name: Martín Osan
+    pic: "/images/professors/martin.jpg"
+    mail: "mosan@fi.uba.ar"
+    github: "mmosan"
