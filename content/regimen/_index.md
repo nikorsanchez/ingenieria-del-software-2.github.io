@@ -66,7 +66,7 @@ Independientemente de los canales que acuerde cada equipo con su docente, la cá
 -   **Sitio web**: <https://ingenieria-del-software-2.github.io>
 -   **Slack**: <https://join.slack.com/t/ta049-ingsoftii/shared_invite/zt-2owpvl6tc-P1NHgQKAbci049EohALmTg>
 
-> Lo informado verbalmente en clase también es válido y debe ser considerado.
+*Lo informado verbalmente en clase también es válido y debe ser considerado.*
 
 ---
 
