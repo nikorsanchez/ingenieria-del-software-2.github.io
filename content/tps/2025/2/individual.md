@@ -29,14 +29,14 @@ El repositorio debe incluir un archivo `README.md` (en español) con:
 -   Comandos para correr la base de datos.
 -   Comandos para correr la imagen del servicio.
 
-Fecha máxima de entrega: [FECHA DE ENTREGA]
+Fecha máxima de entrega: **28-08-2025**
 
 
 #### Formulario de entrega 
 
 Se deberá completar el siguiente formulario con Padrón, Nombre, Apellido y Link al repositorio con la solución
 
-[Formulario]()
+[Formulario](https://forms.gle/vBRbDpQBYDzm1cd7A)
 
 Luego de haber completado este formulario, les solicitaremos que agreguen al usuario del corrector asignado.
 
@@ -254,7 +254,7 @@ paths:
       description: Returns playlists ordered by publishedAt (desc). In the base spec, playlists are created already published.
       responses:
         '200':
-          description: A list of playlists with songs ordered by addition date (most recent first)
+          description: A list of published playlists ordered by publishedAt desc (songs ordered by addedAt desc)
           content:
             application/json:
               schema:
@@ -276,7 +276,7 @@ paths:
             type: integer
       responses:
         '200':
-          description: A list of published playlists ordered by publishedAt desc, with songs ordered by addedAt desc
+          description: Playlist retrieved successfully (songs ordered by addedAt desc)
           content:
             application/json:
               schema:
@@ -509,6 +509,7 @@ components:
     - Agregar un endpoint para **publicar** una playlist: `POST /playlists/{id}/publish` (idempotente).
     - Agregar un **filtro** en el listado: `GET /playlists?published=true` (por defecto muestra solo las publicadas; con `published=false` puede devolver todas para backoffice/tests).
     - El listado de playlists visibles debe mostrar **primero las más recientes**.
+  - En esta variante, `POST /playlists` crea la playlist **no publicada** (`isPublished=false`) y **sin `publishedAt`** (o `publishedAt: null`).
   - Tests sugeridos: publicar una playlist que estaba no visible, idempotencia del endpoint y verificación del filtro en el listado.
 
 #### Contrato aditivo para el Desafío Opcional (7)
@@ -585,10 +586,14 @@ components:
         id: { type: integer }
         name: { type: string }
         description: { type: string }
-        isPublished: { type: boolean }
+        isPublished: 
+          type: boolean
+          description: Visibility flag. In the optional publish variant it starts as false until /publish is called.
         publishedAt:
           type: string
           format: date-time
+          nullable: true
+          description: Publish timestamp. Omitted or null until the playlist is published.
         songs:
           type: array
           items:
