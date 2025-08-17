@@ -61,8 +61,6 @@ Luego de haber completado este formulario, les solicitaremos que agreguen al usu
 
 En este trabajo práctico individual desarrollarás un servicio backend para *Melodía*, una plataforma de descubrimiento y reproducción musical. La API debe gestionar playlists y canciones, incluyendo el ciclo de vida de Canción y su vinculación con Playlist. La persistencia debe ser en una base de datos (relacional o no relacional).
 
-Se recomienda organizar el trabajo en commits pequeños y frecuentes, y asegurar la calidad mediante pruebas automatizadas.
-
 ### Historias de Usuario
 
 #### Gestión de canciones
@@ -73,7 +71,7 @@ Se recomienda organizar el trabajo en commits pequeños y frecuentes, y asegurar
 #### Publicación de playlists  
 
 - **Descripción:** Como usuario de Melodía, quiero poder crear y publicar playlists para que otros usuarios puedan escucharlas.  
-- **Criterio de Aceptación:** El sistema debe permitir a los usuarios crear y publicar playlists que incluyan un nombre, una descripción y una lista de canciones vinculadas desde el catálogo existente. 
+- **Criterio de Aceptación:** El sistema debe permitir a los usuarios crear y publicar playlists que incluyan un nombre, una descripción y una lista de canciones vinculadas desde el catálogo existente. Al crear una playlist, esta queda automáticamente publicada y visible para otros usuarios.
 
 #### Agregar canciones a playlists
 
@@ -482,7 +480,7 @@ components:
 
 ### Desafíos Opcionales
 
-1. **Longitud minima y maxima de la descripcion**:
+1. **Longitud minima y maxima de la descripcion de una playlist**:
     - Requiere que el campo description tenga al menos 50 caracteres y máximo 255 caracteres al crear una playlist.
     - Responde con código 400 si la validación falla.
     - Agrega un test para este caso.
@@ -510,7 +508,7 @@ components:
     - Agregar un **filtro** en el listado: `GET /playlists?published=true` (por defecto muestra solo las publicadas; con `published=false` puede devolver todas para backoffice/tests).
     - El listado de playlists visibles debe mostrar **primero las más recientes**.
   - En esta variante, `POST /playlists` crea la playlist **no publicada** (`isPublished=false`) y **sin `publishedAt`** (o `publishedAt: null`).
-  - Tests sugeridos: publicar una playlist que estaba no visible, idempotencia del endpoint y verificación del filtro en el listado.
+  - Tests sugeridos: verificar que una playlist recién creada no aparece hasta publicarse, que el endpoint de publicación sea idempotente y que el listado respete el filtro published y el orden por fecha.
 
 #### Contrato aditivo para el Desafío Opcional (7)
 ```yaml
