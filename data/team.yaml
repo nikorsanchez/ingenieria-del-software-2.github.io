@@ -73,3 +73,8 @@ team:
     pic: "/images/professors/martin.jpeg"
     mail: "mosan@fi.uba.ar"
     github: "mmosan"
+
+  - name: Nicolás Ramiro Sanchez
+    pic: "/images/professors/niko.jpg"
+    mail: "nrsanchez@fi.uba.ar"
+    github: "nikorsanchez"
