@@ -370,6 +370,9 @@ components:
 
     UpdateSongRequest:
       type: object
+      required:
+        - title
+        - artist
       properties:
         title:
           type: string
