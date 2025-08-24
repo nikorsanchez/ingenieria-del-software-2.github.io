@@ -3,7 +3,9 @@
 date: "2025-08-24T13:00:00Z"
 subtitle: "Enunciado del 2do Cuatrimestre 2025"
 title: "Ajustes en el contrato de actualización (PUT vs PATCH) del TP2C 2025"
-
+tags:
+- trabajos-practicos
+- 2025-2C
 ---
 
 Detectamos una inconsistencia en la especificación OpenAPI del enunciado original para actualizar canciones (`PUT /songs/{id}`). El contrato permitía **cuerpos parciales** (ninguna propiedad `required`), lo que **contradice la semántica estándar de HTTP**: **PUT** reemplaza la representación **completa** del recurso y es **idempotente**; no es _safe_. ([RFC Editor][1], [IETF Datatracker][2])
@@ -37,9 +39,9 @@ Detectamos una inconsistencia en la especificación OpenAPI del enunciado origin
           artist: { type: string }
   ```
 
-> Nota OpenAPI: `requestBody.required: true` solo marca que **hay** cuerpo; los **campos obligatorios** se definen en el **Schema** mediante `required: [...]`. ([Swagger][3], [OpenAPI Initiative Publications][4])
+_Nota OpenAPI_: `requestBody.required: true` solo marca que **hay** cuerpo; los **campos obligatorios** se definen en el **Schema** mediante `required: [...]`. ([Swagger][3], [OpenAPI Initiative Publications][4])
 
-### 🧭 **Ejemplo de uso (PUT = reemplazo completo)**
+### **Ejemplo de uso (PUT = reemplazo completo)**
 
 ```json
 {
@@ -55,7 +57,20 @@ Detectamos una inconsistencia en la especificación OpenAPI del enunciado origin
 - **PUT** → no _safe_, **sí idempotent** (reemplaza por completo).
 - **PATCH** → no _safe_, **no idempotent** por defecto (puede diseñarse idempotente). ([RFC Editor][1], [MDN Web Docs][5], [IETF Datatracker][6])
 
-### 🤔 **¿Qué significa este cambio para vos?**
+_Safe_: métodos cuya semántica es solo lectura y no piden cambios de estado en el servidor.
+
+_No safe_: métodos que sí pueden modificar el estado o producir efectos secundarios.
+
+_Idempotente_: en HTTP, repetir la misma solicitud varias veces deja el recurso/servidor en el mismo estado que si se hiciera una sola vez (aunque el código/respuesta pueda variar).
+
+- _“A request method is considered **‘idempotent’** if the intended effect on the server of multiple identical requests with that method is the same as the effect for a single such request.”_
+RFC 9110 §9.2.2 — [https://www.rfc-editor.org/rfc/rfc9110.html#name-idempotent-methods](https://www.rfc-editor.org/rfc/rfc9110.html#name-idempotent-methods) ([RFC Editor][1])
+
+- _“It knows that repeating the request will have the same intended effect, **even if the original request succeeded, though the response might differ**.”
+RFC 9110 §9.2.2 — [https://www.rfc-editor.org/rfc/rfc9110.html#name-idempotent-methods](https://www.rfc-editor.org/rfc/rfc9110.html#name-idempotent-methods) ([RFC Editor][1])_
+
+
+### **¿Qué significa este cambio para vos?**
 
 - Si tu implementación hacía que **PUT** aceptara parciales, ajustala para que **requiera** `title` y `artist` (reemplazo completo).
 - Si ya tenías **PUT** como reemplazo total, no necesitás cambios.
