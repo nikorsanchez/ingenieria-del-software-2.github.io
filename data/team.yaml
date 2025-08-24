@@ -63,3 +63,18 @@ team:
     pic: "/images/professors/iara.jpg"
     mail: "ijolodovsky@fi.uba.ar"
     github: "ijolodovsky"
+
+  - name: Maximo Utrera
+    pic: "/images/professors/maxo.jpg"
+    mail: "mutrera@fi.uba.ar"
+    github: "maxogod"
+
+  - name: Martín Osan
+    pic: "/images/professors/martin.jpeg"
+    mail: "mosan@fi.uba.ar"
+    github: "mmosan"
+
+  - name: Nicolás Ramiro Sanchez
+    pic: "/images/professors/niko.jpg"
+    mail: "nrsanchez@fi.uba.ar"
+    github: "nikorsanchez"

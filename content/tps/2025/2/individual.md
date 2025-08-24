@@ -378,7 +378,7 @@ components:
           type: string
         artist:
           type: string
-          
+
     PlaylistSong:
       type: object
       properties:
