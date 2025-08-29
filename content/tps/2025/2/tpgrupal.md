@@ -8,6 +8,9 @@ subtitle: "Grupal"
 
 Descubrí más. Escuchá mejor.
 
+<img width="1260" height="763" alt="melodia-banner" src="https://github.com/user-attachments/assets/6e0887ca-ed38-4583-8114-e865b46fe6ba" />
+
+
 ## Descripción
 
 Melodia no es solo un botón de play: ordena el caos infinito de música y lo convierte en algo simple. Canciones, colecciones y playlists aparecen justo donde tienen que estar, con un catálogo que se acomoda como si te conociera desde siempre. No hace falta rebuscar demasiado: lo que más te atrapa llega primero, lo nuevo se asoma en el momento justo y lo clásico siempre queda a mano. Todo se guarda, todo se comparte fácil, y siempre hay lugar para sorpresas que te cambien las vibras.
