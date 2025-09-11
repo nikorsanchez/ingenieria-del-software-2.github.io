@@ -1866,7 +1866,7 @@ ___
 ### Despliegue en la Nube
 
 Los servicios, se deberán disponibilizar en la nube utilizando una plataforma como servicio (_[PAAS](https://en.wikipedia.org/wiki/Platform_as_a_service)_).
-La catedra recomienda leer la (sección)[https://ingenieria-del-software-2.github.io/assignments/recommendations/] del sitio de la materia para informarse las distintas opciones disponibles
+La catedra recomienda leer la (sección)[https://ingenieria-del-software-2.github.io/blog/2025-09-11-cloud-computing] del sitio de la materia para informarse las distintas opciones disponibles
  
 
 ___
