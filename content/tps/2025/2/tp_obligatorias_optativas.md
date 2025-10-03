@@ -71,12 +71,3 @@ title: "Historias obligatorias/optativas"
 | 27  | Onboarding: artistas favoritos                    |     Onboarding | 2      |
 | 28  | Onboarding: preferencias de notificaciones        |     Onboarding | 1      |
 
----
-
-## Resumen de guardrails
-
-| Métrica                            | Valor |          Objetivo | Estado     |
-| ---------------------------------- | ----: | ----------------: | ---------- |
-| Historias Totales                  |    56 |             40–60 | **Óptimo** |
-| Balance Obligatorias               |   48% |            40–60% | **Óptimo** |
-| Complejidad Opcional (suma puntos) |    95 | 60–100 (máx. 120) | **Óptimo** |
