@@ -1,3 +1,9 @@
+---
+
+title: "Historias obligatorias/optativas"
+---
+
+
 ## Historias obligatorias
 
 | #   | Historia                                        | Épica          
