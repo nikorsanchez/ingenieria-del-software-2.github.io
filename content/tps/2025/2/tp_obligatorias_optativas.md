@@ -27,15 +27,14 @@ title: "Historias obligatorias/optativas"
 | 18  | Búsqueda unificada por tipo                     | Explorar       
 | 19  | Navegación a vistas de detalle                  | Explorar       
 | 20  | Creación y gestión de playlists                 | Biblioteca     
-| 21  | Reordenamiento en playlists                     | Biblioteca     
+| 21  | Reordenamiento de Contenido en Playlists        | Biblioteca     
 | 22  | Historial de reproducción                       | Biblioteca     
-| 23  | Liked Songs                                     | Biblioteca     
-| 24  | Colecciones guardadas                           | Biblioteca     
-| 25  | Reproducción y controles básicos                | Reproducción   
-| 26  | Controles avanzados del player                  | Reproducción   
-| 27  | Gestión de cola                                 | Reproducción   
-| 28  | Toggle de Liked desde el player                 | Reproducción   
-| 29  | Métricas de usuario (panel + export)            | Métricas
+| 23  | Liked Songs                                     | Biblioteca         
+| 24  | Reproducción y controles básicos                | Reproducción   
+| 25  | Controles avanzados del player                  | Reproducción   
+| 26  | Gestión de cola                                 | Reproducción   
+| 27  | Toggle de Liked desde el player                 | Reproducción   
+| 28  | Métricas de usuario (panel + export)            | Métricas
 
 ---
 
@@ -50,24 +49,26 @@ title: "Historias obligatorias/optativas"
 | 5   | Disponibilidad por región/ventana (backoffice)    | Adm. Contenido | 5      |
 | 6   | Bloqueo/desbloqueo con alcance                    | Adm. Contenido | 3      |
 | 7   | Métricas de canciones/álbumes                     |       Métricas | 3      |
+| 8   | Métricas de artistas                              |       Métricas | 7      |
 | 9   | Colaboraciones / “Aparece en”                     |       Artistas | 3      |
-| 10  | Disponibilidad por territorios/ventana (creators) |       Artistas | 3      |
+| 10  | Artistas relacionados (Similares a)               |       Artistas | 5      |
+| 10  | Disponibilidad por ventana (creators)             |       Artistas | 3      |
 | 11  | Autocompletar metadatos (Fast Complete) \[IA]     |       Artistas | 5      |
 | 12  | Explorar Home (base)                              |       Explorar | 3      |
 | 13  | “New release from {Artist}”                       |       Explorar | 2      |
 | 14  | “Discover more from {Artist}”                     |       Explorar | 2      |
 | 15  | Made For You (Discover/Daily Mix)                 |       Explorar | 8      |
-| 16  | Mood Mixes asistidos \[IA]                        |     Biblioteca | 5      |
+| 16  | Creación Asistida de ‘Mood Mixes’ (IA)            |     Biblioteca | 5      |
 | 17  | Videos musicales asociados                        |   Reproducción | 3      |
 | 18  | Reproducción On-Demand (multidispositivo)         |   Reproducción | 5      |
 | 19  | Reproducción continua (autoplay sin cola) \[IA]   |   Reproducción | 3      |
-| 20  | Seguir/Dejar de seguir usuarios                   |         Social | 2      |
-| 21  | Feed de actividad de amigos (+ filtros)           |         Social | 3      |
-| 22  | Compartir canciones/playlists                     |         Social | 2      |
+| 20  | Seguimiento de Perfiles de Usuario                |         Social | 2      |
+| 21  | Visualización de Actividad de Amigos (+ filtros)  |         Social | 3      |
+| 22  | Compartir Canciones y Playlists                   |         Social | 2      |
 | 23  | Playlists temáticas por contexto                  |         Vibras | 3      |
 | 24  | Radio por canción \[IA]                           |         Vibras | 3      |
 | 25  | Auto Play (nuevo contexto de 15 canciones) \[IA]  |         Vibras | 3      |
 | 26  | Onboarding: géneros favoritos                     |     Onboarding | 2      |
 | 27  | Onboarding: artistas favoritos                    |     Onboarding | 2      |
-| 28  | Onboarding: preferencias de notificaciones        |     Onboarding | 1      |
+| 28  | Onboarding: Personalización de Notificaciones     |     Onboarding | 1      |
 
