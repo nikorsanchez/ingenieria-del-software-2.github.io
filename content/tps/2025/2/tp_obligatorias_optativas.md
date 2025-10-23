@@ -22,19 +22,19 @@ title: "Historias obligatorias/optativas"
 | 12  | Perfil del artista                              | Artistas       
 | 13  | Discografía                                     | Artistas       
 | 14  | Popular (Top del artista)                       | Artistas       
-| 16  | Gestión de perfil del artista                   | Artistas       
-| 17  | Publicación de lanzamientos                     | Artistas       
-| 18  | Búsqueda unificada por tipo                     | Explorar       
-| 19  | Navegación a vistas de detalle                  | Explorar       
-| 20  | Creación y gestión de playlists                 | Biblioteca     
-| 21  | Reordenamiento de Contenido en Playlists        | Biblioteca     
-| 22  | Historial de reproducción                       | Biblioteca     
-| 23  | Liked Songs                                     | Biblioteca         
-| 24  | Reproducción y controles básicos                | Reproducción   
-| 25  | Controles avanzados del player                  | Reproducción   
-| 26  | Gestión de cola                                 | Reproducción   
-| 27  | Toggle de Liked desde el player                 | Reproducción   
-| 28  | Métricas de usuario (panel + export)            | Métricas
+| 15  | Gestión de perfil del artista                   | Artistas       
+| 16  | Publicación de lanzamientos                     | Artistas       
+| 17  | Búsqueda unificada por tipo                     | Explorar       
+| 18  | Navegación a vistas de detalle                  | Explorar       
+| 19  | Creación y gestión de playlists                 | Biblioteca     
+| 20  | Reordenamiento de Contenido en Playlists        | Biblioteca     
+| 21  | Historial de reproducción                       | Biblioteca     
+| 22  | Liked Songs                                     | Biblioteca         
+| 23  | Reproducción y controles básicos                | Reproducción   
+| 24  | Controles avanzados del player                  | Reproducción   
+| 25  | Gestión de cola                                 | Reproducción   
+| 26  | Toggle de Liked desde el player                 | Reproducción   
+| 27  | Métricas de usuario (panel + export)            | Métricas
 
 ---
 
@@ -52,23 +52,23 @@ title: "Historias obligatorias/optativas"
 | 8   | Métricas de artistas                              |       Métricas | 7      |
 | 9   | Colaboraciones / “Aparece en”                     |       Artistas | 3      |
 | 10  | Artistas relacionados (Similares a)               |       Artistas | 5      |
-| 10  | Disponibilidad por ventana (creators)             |       Artistas | 3      |
-| 11  | Autocompletar metadatos (Fast Complete) \[IA]     |       Artistas | 5      |
-| 12  | Explorar Home (base)                              |       Explorar | 3      |
-| 13  | “New release from {Artist}”                       |       Explorar | 2      |
-| 14  | “Discover more from {Artist}”                     |       Explorar | 2      |
-| 15  | Made For You (Discover/Daily Mix)                 |       Explorar | 8      |
-| 16  | Creación Asistida de ‘Mood Mixes’ (IA)            |     Biblioteca | 5      |
-| 17  | Videos musicales asociados                        |   Reproducción | 3      |
-| 18  | Reproducción On-Demand (multidispositivo)         |   Reproducción | 5      |
-| 19  | Reproducción continua (autoplay sin cola) \[IA]   |   Reproducción | 3      |
-| 20  | Seguimiento de Perfiles de Usuario                |         Social | 2      |
-| 21  | Visualización de Actividad de Amigos (+ filtros)  |         Social | 3      |
-| 22  | Compartir Canciones y Playlists                   |         Social | 2      |
-| 23  | Playlists temáticas por contexto                  |         Vibras | 3      |
-| 24  | Radio por canción \[IA]                           |         Vibras | 3      |
-| 25  | Auto Play (nuevo contexto de 15 canciones) \[IA]  |         Vibras | 3      |
-| 26  | Onboarding: géneros favoritos                     |     Onboarding | 2      |
-| 27  | Onboarding: artistas favoritos                    |     Onboarding | 2      |
-| 28  | Onboarding: Personalización de Notificaciones     |     Onboarding | 1      |
+| 11  | Disponibilidad por ventana (creators)             |       Artistas | 3      |
+| 12  | Autocompletar metadatos (Fast Complete) \[IA]     |       Artistas | 5      |
+| 13  | Explorar Home (base)                              |       Explorar | 3      |
+| 14  | “New release from {Artist}”                       |       Explorar | 2      |
+| 15  | “Discover more from {Artist}”                     |       Explorar | 2      |
+| 16  | Made For You (Discover/Daily Mix)                 |       Explorar | 8      |
+| 17  | Creación Asistida de ‘Mood Mixes’ (IA)            |     Biblioteca | 5      |
+| 18  | Videos musicales asociados                        |   Reproducción | 3      |
+| 19  | Reproducción On-Demand (multidispositivo)         |   Reproducción | 5      |
+| 20  | Reproducción continua (autoplay sin cola) \[IA]   |   Reproducción | 3      |
+| 21  | Seguimiento de Perfiles de Usuario                |         Social | 2      |
+| 22  | Visualización de Actividad de Amigos (+ filtros)  |         Social | 3      |
+| 23  | Compartir Canciones y Playlists                   |         Social | 2      |
+| 24  | Playlists temáticas por contexto                  |         Vibras | 3      |
+| 25  | Radio por canción \[IA]                           |         Vibras | 3      |
+| 26  | Auto Play (nuevo contexto de 15 canciones) \[IA]  |         Vibras | 3      |
+| 27  | Onboarding: géneros favoritos                     |     Onboarding | 2      |
+| 28  | Onboarding: artistas favoritos                    |     Onboarding | 2      |
+| 29  | Onboarding: Personalización de Notificaciones     |     Onboarding | 1      |
 
