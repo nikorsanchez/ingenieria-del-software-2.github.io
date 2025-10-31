@@ -49,9 +49,9 @@ title: "Historias obligatorias/optativas"
 | 5   | Disponibilidad por región/ventana (backoffice)    | Adm. Contenido | 5      |
 | 6   | Bloqueo/desbloqueo con alcance                    | Adm. Contenido | 3      |
 | 7   | Métricas de canciones/álbumes                     |       Métricas | 3      |
-| 8   | Métricas de artistas                              |       Métricas | 7      |
+| 8   | Métricas de artistas                              |       Métricas | 5      |
 | 9   | Colaboraciones / “Aparece en”                     |       Artistas | 3      |
-| 10  | Artistas relacionados (Similares a)               |       Artistas | 5      |
+| 10  | Artistas relacionados (Similares a)               |       Artistas | 4      |
 | 11  | Disponibilidad por ventana (creators)             |       Artistas | 3      |
 | 12  | Autocompletar metadatos (Fast Complete) \[IA]     |       Artistas | 5      |
 | 13  | Explorar Home (base)                              |       Explorar | 3      |
