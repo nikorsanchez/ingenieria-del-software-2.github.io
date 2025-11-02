@@ -13,10 +13,10 @@ title: "Historias obligatorias/optativas"
 | 3   | Recupero de contraseña                          | Usuarios       
 | 4   | Edición de perfil                               | Perfil         
 | 5   | Visualización de perfil propio                  | Perfil         
-| 6   | Centro + preferencias + disparadores esenciales | Notificaciones 
+| 6   | Notificación por nuevo contenido y actividad... | Notificaciones 
 | 7   | Listar usuarios del sistema                     | Adm. Usuarios  
 | 8   | Bloquear/Desbloquear usuario                    | Adm. Usuarios  
-| 9   | Catálogo: listar/buscar/filtrar                 | Adm. Contenido 
+| 9   | Catálogo: explorar y buscar contenido           | Adm. Contenido 
 | 10  | Contenido: detalle y trazabilidad               | Adm. Contenido 
 | 11  | Transiciones y estado efectivo                  | Adm. Contenido 
 | 12  | Perfil del artista                              | Artistas       
@@ -44,8 +44,8 @@ title: "Historias obligatorias/optativas"
 | --- | ------------------------------------------------- | -------------: | ------ |
 | 1   | Login con proveedor federado                      |       Usuarios | 2      |
 | 2   | Ver perfil de otros usuarios                      |         Perfil | 2      |
-| 3   | Deep links avanzados en notificaciones            | Notificaciones | 5      |
-| 4   | Perfil detallado (admin)                          |  Adm. Usuarios | 2      |
+| 3   | Enrutamiento al hacer clic en notificaciones      | Notificaciones | 5      |
+| 4   | Visualizar perfil de usuario (admin)              |  Adm. Usuarios | 2      |
 | 5   | Disponibilidad por región/ventana (backoffice)    | Adm. Contenido | 5      |
 | 6   | Bloqueo/desbloqueo con alcance                    | Adm. Contenido | 3      |
 | 7   | Métricas de canciones/álbumes                     |       Métricas | 3      |
@@ -59,7 +59,7 @@ title: "Historias obligatorias/optativas"
 | 15  | “Discover more from {Artist}”                     |       Explorar | 2      |
 | 16  | Made For You (Discover/Daily Mix)                 |       Explorar | 8      |
 | 17  | Creación Asistida de ‘Mood Mixes’ (IA)            |     Biblioteca | 5      |
-| 18  | Videos musicales asociados                        |   Reproducción | 3      |
+| 18  | Videos musicales asociados                        |   Reproducción | 8      |
 | 19  | Reproducción On-Demand (multidispositivo)         |   Reproducción | 5      |
 | 20  | Reproducción continua (autoplay sin cola) \[IA]   |   Reproducción | 3      |
 | 21  | Seguimiento de Perfiles de Usuario                |         Social | 2      |
