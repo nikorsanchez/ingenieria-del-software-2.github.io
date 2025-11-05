@@ -55,8 +55,8 @@ title: "Historias obligatorias/optativas"
 | 11  | Disponibilidad por ventana (creators)             |       Artistas | 3      |
 | 12  | Autocompletar metadatos (Fast Complete) \[IA]     |       Artistas | 5      |
 | 13  | Explorar Home (base)                              |       Explorar | 3      |
-| 14  | “New release from {Artist}”                       |       Explorar | 2      |
-| 15  | “Discover more from {Artist}”                     |       Explorar | 2      |
+| 14  | [Home] New release from {Artist}                  |       Explorar | 2      |
+| 15  | [Home] Discover more from {Artist}                |       Explorar | 2      |
 | 16  | Made For You (Discover/Daily Mix)                 |       Explorar | 8      |
 | 17  | Creación Asistida de ‘Mood Mixes’ (IA)            |     Biblioteca | 5      |
 | 18  | Videos musicales asociados                        |   Reproducción | 8      |
